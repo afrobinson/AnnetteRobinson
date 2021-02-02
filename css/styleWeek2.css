@@ -122,7 +122,7 @@ header {
 
 /*This is the flex container that holds the links to class assignments.
 Used the Week 0 resource https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-(working on understanding css selectors, # for a unique ID or . for a class)*/
+For Week 2, I adjusted the width to fit in the column divs */
 .flex-container {
 	width: 250px;
 	height: 100px;
@@ -138,7 +138,8 @@ Used the Week 0 resource https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 	justify-content: space-around;
 	/*background-color: #fffefa;*/
 }
-/*This is styling for the child div items (each class assignment link is a child item inside the flex container). */
+/*This is styling for the child div items (each class assignment link is a child item inside the flex container).
+    For Week 2, I adjusted the width and height to create space between each item/link */
 .flex-container div {
 	width: 75px;
 	height: 45px;
