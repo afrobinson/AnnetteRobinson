@@ -150,7 +150,7 @@ For Week 2, I adjusted the width to fit in the column divs */
 	color: white;
 	background-color: #890d20;
 }
-	/*These two pieces are styling for the child div URL links*/
+	/*These pieces are styling for the child div URL links*/
 	.flex-container a {
 		color: white;
 		font-family: "Raleway", arial, sans-serif;
@@ -158,6 +158,10 @@ For Week 2, I adjusted the width to fit in the column divs */
 	.flex-container div:hover {
 		background-color: #0d8976;
 	}
+	.active {
+		background-color: chocolate;
+		font-family: "Raleway Bold", arial, sans-serif;
+	  }
 	
 footer {
 	position: absolute;
