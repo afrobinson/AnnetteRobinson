@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Annette Robinson</title>
+  <link rel="stylesheet" type="text/css" href="css/styleExtra1.css">
+</head>
+<body>
+  <div id="container">  
+    <header>
+      <h1>Web Programming 1 Assignments</h1>
+    </header>
+    <br>
+    
+    <!--This is an attempt to create 3 columns: "left-div" to nest Column 1 and Column 2; "right-div" for Column 3
+      The columns are within the outer container that houses all the page content
+      I have used the flexbox model from Week 1 to display assignment links in Column 1 and Column 3-->
+
+    <div id = "left-div">
+      <div id = "column-1">
+        <h4>Class Assignments Week 0 to Week 5</h4>
+        <div class="flex-container">
+          <div><a href="indexWeek0.html" target="_blank">Week 0</a></div>
+          <div><a href="indexWeek1.html" target="_blank">Week 1</a></div>
+          <div><a href="indexWeek2.html" target="_blank">Week 2</a></div>
+          <div><a href="indexWeek3.html" target="_blank">Week 3</a></div>
+          <div><a href="indexWeek4.html" target="_blank">Week 4</a></div>
+          <div><a href="indexWeek5.html" target="_blank">Week 5</a></div>
+        </div>
+        <br>
+        <br>
+        <div class = "extra-div" style = "float:right";>
+            <p>╭(◔ ◡ ◔)/</p>
+            <p>Who dat?</p>
+        </div>        
+      </div>
+      <div id = "column-2">
+        <h3>Annette Robinson</h3>
+        <p align="center"><img src="images/annette.png" style="border: 2px solid #890d20; border-radius: 30%; height: 200px;" alt="Photo of Annette Robinson"/></p>
+        <p align="center">I am a student in the <a href="https://www.usf.edu/education/areas-of-study/instructional-technology/learning-design-and-technology/index.aspx" target="_blank">Learning Design and Technology</a> program at the University of South Florida.</p>
+        <p align="center">This semester, I will be learning more about html, CSS and javascript in Dr. Glenn Smith's EME 6930 Web Programming I class.</p>
+      </div>
+    </div>
+
+    <!--I deviated from the class example by nesting Column 3 in the right div (instead of making the right div itself Column 3).
+       It seemed to make it easier to size the columns-->
+    <div id = "right-div">
+      <div id = "column-3">
+        <h4>Class Assignments Week 6 to Final Project</h4>
+        <div class="flex-container">
+          <div><a href="indexWeek6.html" target="_blank">Week 6</a></div>
+          <div><a href="indexWeek7.html" target="_blank">Week 7</a></div>
+          <div><a href="indexWeek8.html" target="_blank">Week 8</a></div>
+          <div><a href="indexWeek9.html" target="_blank">Week 9</a></div>
+          <div><a href="indexWeek10.html" target="_blank">Week 10</a></div>
+          <div><a href="indexFinalProject.html" target="_blank">Final</a></div>
+        </div>
+        <br>
+        <br>
+        <div class = "extra-div">
+            <p>¯\_(ツ)_/¯</p>
+            <p>Who cares?!</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+		  Copyright 2021, <a style="color: white" href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
+    </footer>
+  
+  </div>
+</body>
+</html>

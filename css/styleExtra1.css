@@ -1,0 +1,184 @@
+﻿/*This CSS stylesheet for EME6930 Week 2 keeps all content in a "container" div.
+The header and footer run the width of the container while all other content is broken into three columns.
+Similar to the Week 2 class example pulled from http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/ ,
+    "left-div" nests Column 1 and Column 2
+    "right-div" nests Column 3 (deviating from the example; I found it easier to manipulate the column size and position by nesting here too)
+The links to class assignments in Column 1 and Column 3 remain in the flexbox style used in Week 1.
+ */
+
+@font-face {
+	font-family:"Raleway";
+	src: url('../assets/fonts/raleway/Raleway-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family:"Raleway Bold";
+	src: url('../assets/fonts/raleway/Raleway-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family:"Merriweather";
+	src: url('../assets/fonts/merriweather/Merriweather-Light.otf') format('opentype');
+}
+@font-face {
+	font-family:"Merriweather Regular";
+	src: url('../assets/fonts/merriweather/Merriweather-Regular.otf') format('opentype');
+}
+h1 {
+	font-family: "Raleway Bold", arial, sans-serif;
+	color:  white;
+	font-size: 30px;
+}
+h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;	
+	font-family: "Raleway Bold", arial, sans-serif;
+	color:  #00000f;
+	font-size: 24px;
+}
+h3 {
+	font-family: "Raleway Bold", arial, sans-serif;
+	color:  #00000f;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 5px;
+}
+h4 {
+	font-family: "Raleway Bold", arial, sans-serif;
+	color:  #00000f;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 10px;
+}
+p {
+	font-family: "Merriweather", Helvetica, arial, sans-serif;
+	/*color:  white;*/
+	font-size: 13px;
+}
+
+body {
+	background-color: #fffefa;
+}
+#container {
+	position: relative;
+	background-color: #fffdcf;
+	height: 600px;
+	width: 1000px;
+	/*margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;*/
+	margin: 0px auto 0px auto;
+}
+header {
+	height: 40px;
+	background-color: #890d20;
+	color: white;
+	text-align: center;
+	/*padding: 1px;*/
+}
+
+#left-div {
+    float:left;
+    width:63.5%;
+    height: 92%;
+    padding: 1%;
+    /*border: 1px solid #890d20;*/
+}
+
+#column-1 {
+    float:left;
+    width:46%;
+    height: 70%;
+    padding: 1%;
+    background-color: #fffdcf;
+    border: 1px solid #890d20;
+}
+
+#column-2 {
+    float:right;
+    width:46%;
+    height: 85%;
+    padding: 1%;
+    background-color: #fffefa;
+    border: 1px solid #890d20;
+}
+
+#right-div {
+    float:right;
+    width:32%;
+    height: 77%;
+    padding: 1%;
+    background-color: #fffdcf;
+    /*border: 1px solid #890d20;*/
+}
+
+#column-3 {
+    /*float:right;*/
+    width:96%;
+    height: 85%;
+    padding: 1%;
+    background-color: #fffdcf;
+    border: 1px solid #890d20;
+}
+
+.extra-div {
+    /*emojicons! http://emojicons.com/*/
+    width:25%;
+    height: 20%;
+    background-color: #fffdcf;
+}
+
+/*This is the flex container that holds the links to class assignments.
+Used the Week 0 resource https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+For Week 2, I adjusted the width to fit in the column divs */
+.flex-container {
+	width: 250px;
+	height: 100px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	/*align-items: center;*/
+	flex-direction: row;
+	flex-wrap: wrap;
+	/*flex-flow: row wrap;*/
+	justify-content: center;
+	justify-content: space-around;
+	/*background-color: #fffefa;*/
+}
+/*This is styling for the child div items (each class assignment link is a child item inside the flex container).
+    For Week 2, I adjusted the width and height to create space between each item/link */
+.flex-container div {
+	width: 75px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+		/*I got some tips on vertically aligning text in the child div by making the line height the same as the div height
+		- from https://stackoverflow.com/questions/6055412/center-text-in-div */
+	color: white;
+	background-color: #890d20;
+}
+	/*These pieces are styling for the child div URL links*/
+	.flex-container a {
+		color: white;
+		font-family: "Raleway", arial, sans-serif;
+	}
+	.flex-container div:hover {
+		background-color: #0d8976;
+	}
+	.active {
+		background-color: chocolate;
+		font-family: "Raleway Bold", arial, sans-serif;
+	  }
+	
+footer {
+	position: absolute;
+	height: 20px;
+	width: 100%;
+	background-color: #890d20;
+	color: white;
+	bottom: 0px;
+	font-family: "Raleway Bold", Helvetica, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	/*padding-top: 5px;*/
+}
