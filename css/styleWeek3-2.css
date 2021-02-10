@@ -1,0 +1,81 @@
+﻿/*CSS stylesheet for EME6930 Week 3, business prototype web page.
+Fonts:
+	Logo uses Bungee by David Jonathan Ross https://www.fontsquirrel.com/fonts/list/foundry/david-jonathan-ross
+	Heading is Raleway Regular https://www.fontsquirrel.com/fonts/raleway
+Colors:
+	A triadic combination: #8601af purple, #fb9902 orange, #66b032 green, with a pale lavender #efd4f7 and dark brown #342309.
+ */
+
+ @font-face {
+	font-family:"Raleway";
+	src: url('../assets/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+}
+
+h1 {
+	font-family: "Raleway", arial, sans-serif;
+	color:  #8601af;
+	font-size: 50px;
+}
+
+p {
+	font-family: "Merriweather", Helvetica, arial, sans-serif;
+	/*color:  white;*/
+	font-size: 13px;
+}
+
+body {
+	background-color: #efd4f7; /*opacity: 0.5;*/
+}
+
+header {
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: white;
+	position: relative;
+    text-align:center;
+}
+/*following the example of Jose's logo div*/
+#logo {
+	width: 220px;
+	height: 200px;
+	float: left;
+    position: relative;
+	top:10px;
+	left: 10px;
+	background-image: url("logoKanDo2.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+#heading {
+    float: right;
+    position: relative;
+    width: 70%;
+    height: 150px;
+    line-height: 150px;
+    padding: 5px;
+}
+
+/*horizontal line (solid border in the dark brown)*/
+.hr-div {
+    width: 100%;
+    position: relative;
+}
+hr.thickbrown {
+    border: 1px solid #342309;
+  }
+
+/*	
+footer {
+	position: absolute;
+	height: 20px;
+	width: 100%;
+	background-color: #890d20;
+	color: white;
+	bottom: 0px;
+	font-family: "Raleway Bold", Helvetica, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	/*padding-top: 5px;
+}
+*/
