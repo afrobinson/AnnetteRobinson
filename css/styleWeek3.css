@@ -1,0 +1,305 @@
+﻿ /* =================================================================
+    CSS stylesheet for EME6930 Week 3, business prototype web page.
+    Fonts:
+	Logo uses Bungee by David Jonathan Ross https://www.fontsquirrel.com/fonts/list/foundry/david-jonathan-ross
+	Headings are Raleway Regular https://www.fontsquirrel.com/fonts/raleway
+    Colors:
+	A triadic combination: #8601af purple, #fb9902 orange, #66b032 green, with a pale lavender #efd4f7 and dark brown #342309.
+    ================================================================= */
+
+ /* ================================================================= 
+ Using Dr. Smith's Simplest Responsive Website example,this top section is designed to display on media less than 400px wide.
+ Updated the div colors in both sections to use my color scheme above.
+ When display is "none", that div does not appear on that screen size.
+ When display is "block", it is visible.
+    ================================================================= */ 
+
+ body {
+	background-color: #efd4f7; /*opacity: 0.5;*/
+    }
+
+ @font-face {
+	font-family:"Raleway";
+	src: url('../assets/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    }
+
+ a:link {
+  color: #8601af;
+  background-color: transparent;
+    }
+
+ /* ================================================================= 
+    This section of css is for screens under 400px wide
+    ================================================================= */ 
+
+@media screen and (max-width: 399px) {
+ nav {
+    background: #fb9902;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Raleway", arial, sans-serif;
+    padding-left: 5px;
+    display: none;
+    }
+    
+/*following the example of Jose's logo div*/
+#logo {
+	width: 150px;
+	height: 150px;
+    margin: auto;
+	background-image: url("logoKanDo2.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+    display: block;
+}
+   
+#kanban-small {
+    background: #efd4f7;
+    color: #8601af;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Raleway", arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    }
+   
+#kanban-big {
+    background: #efd4f7;
+    color: #8601af;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Raleway", arial, sans-serif;
+    padding: 5px;
+    text-align: center;
+    display: none;
+    }
+
+/* ===== FLEXBOX-COLUMN ===== */
+.flex-container {
+	max-width: 300px;
+	height: 275px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	/*align-items: center;*/
+	flex-direction: column;
+	/*flex-wrap: wrap;*/
+	/*flex-flow: row wrap;*/
+	justify-content: center;
+	justify-content: space-around;
+	/*background-color: #fffefa;*/
+    display: block;
+    }
+/*Styling for the flex container child div items*/
+.flex-container div {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+    /*line height same as div height vertically aligns the text in the div BUT look at other ways of doing this*/
+	text-align: center;
+    font-size: 25px;
+
+	color: #342309;
+	background-color: white;
+    }  
+
+ footer {
+    background: #fb9902;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Raleway", arial, sans-serif;
+    text-align: center;
+    padding: 5px;
+    display: block;
+    }
+
+}
+
+/* =================================================================
+   This section of css is for screens between 400px and 719px wide
+   ================================================================= */     
+
+@media screen and (min-width: 400px) and (max-width: 719px) {
+
+ nav {
+    background: #fb9902;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Raleway", arial, sans-serif;
+    padding-left: 5px;
+    display: block;
+    }
+
+#logo {
+	width: 150px;
+	height: 150px;
+    margin: auto;
+	background-image: url("logoKanDo2.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+    display: block;
+}
+    
+#kanban-small {
+    background: #efd4f7;
+    color: #8601af;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Raleway", arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    }
+            
+#kanban-big {
+    background: #efd4f7;
+    color: #8601af;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Raleway", arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    }
+
+/* ===== FLEXBOX-COLUMN ===== 
+    Wider and with a brown border */
+.flex-container {
+	max-width: 600px;
+	height: 300px;
+	margin-right: auto;
+    margin-bottom: 10px;
+	margin-left: auto;
+	display: flex;
+	/*align-items: center;*/
+	flex-direction: column;
+	/*flex-wrap: wrap;*/
+	/*flex-flow: row wrap;*/
+	justify-content: center;
+	justify-content: space-around;
+	/*background-color: #fffefa;*/
+    border: solid #342309;
+    display: block;
+    }
+/*Styling for the flex container child div items*/
+.flex-container div {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+    font-size: 25px;
+	color: #342309;
+	background-color: white;
+    } 
+
+ footer {
+    background: #fb9902;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Raleway", arial, sans-serif;
+    text-align: center;
+    padding: 5px;
+    display: block;
+    }
+
+}
+
+
+ /* ================================================================= 
+    This section of css is for screens at least 720px wide
+    ================================================================= */
+
+@media screen and (min-width: 720px) {
+
+nav {
+       background: #fb9902;
+       color: white;
+       font-weight: bold;
+       font-size: 30px;
+       font-family: "Raleway", arial, sans-serif;
+       padding-left: 5px;
+       display: block;
+       }
+
+#logo {
+	width: 150px;
+	height: 150px;
+	background-image: url("logoKanDo2.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+    display: block;
+}
+       
+#kanban-small {
+       background: #efd4f7;
+       color: #8601af;
+       font-size: 30px;
+       font-weight: bold;
+       font-family: "Raleway", arial, sans-serif;
+       padding: 10px;
+       display: none;
+       }
+               
+#kanban-big {
+       background: #efd4f7;
+       color: #8601af;
+       font-size: 30px;
+       font-weight: bold;
+       font-family: "Raleway", arial, sans-serif;
+       padding: 10px;
+       display: block;
+       }
+
+/* ===== FLEXBOX-ROW ===== 
+       For a horizontal representation of the kanban style app flow, WITH green background WITHOUT brown border
+        "display: block;" did not work here, it prevented the flexbox items from displaying in a row */
+.flex-container {
+	min-width: 700px;
+	height: 300px;
+	margin-right: auto;
+    margin-bottom: 10px;
+	margin-left: auto;
+	display: flex;
+	/*align-items: center;*/
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	justify-content: space-around;
+    align-items: center;
+    background-color: #66b032;
+    }
+/*Styling for the flex container child div items
+    flex-wrap would wrap the text inside the flex items if needed */
+.flex-container div {
+	width: 19%;
+    height: 200px;
+	line-height: 200px;
+	text-align: center;
+    font-size: 18px;
+    align-content: center;
+    flex-wrap: wrap;
+    color: #342309;
+    font-weight: bold;
+	background-color: white;
+    } 
+
+ footer {
+    background: #fb9902;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Raleway", arial, sans-serif;
+    text-align: center;
+    padding: 5px;
+    display: block;
+    }
+
+}
