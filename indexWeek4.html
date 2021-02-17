@@ -1,23 +1,36 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-  <title>Annette Robinson</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+<title> Week 4 Annette Robinson</title>
+<script type="text/javascript">
+
+/*  declaration of three variables and variable assignments; welcome alert box and initial user prompt */
+var variable_1, variable_2, variable_3;
+
+alert("Welcome to KanDo! Hit OK to see if you need our help.");
+variable_1 = Number(prompt("How many school assignments do you have in a week?"));
+variable_2 = 2;
+variable_3 = variable_2 + 1;
+
+/* if and if...else statements with comparison operators, a logical operator, and text strings */
+if (variable_1 <= 0)
+    { document.write("<br><h1 style='color: #8601af'>Sounds like you don't need help!</h1>");
+    }
+    else if (variable_1 == 1 || variable_1 == variable_2)
+    { document.write("<br><h1 style='color: #66b032'>KanDo can help you!</h1>");
+    }
+    else if (variable_1 == variable_3)
+        { document.write("<br><h1 style='color: #fb9902'>KanDo says, 'You really need our help!'</h1>");
+        }
+        else if (variable_1 > variable_3)
+            { document.write("<br><h1 style='color: red'>Call KanDo! Help is on the way!</h1>");
+            }
+
+</script>
 </head>
-<body>
-  <div id="container">  
-    <header>
-      <h1>Web Programming 1 Assignments</h1>
-    </header>
-		<br>
-		  <h2 align="center"><b>Annette Robinson</b></h2>
-        <br>
-        <h3 align="center">This is a placeholder page for my <u>Week 4</u> assignment in Dr. Smith's EME 6930 Web Programming 1 class</h3>
-    <footer>
-		  Copyright 2021, <a style="color: white" href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
-    </footer>
-  </div>
-  <!--Design Notes: Working off the background color #fffdd1, in www.color-hex.com I found the daenerys color palette created by https://www.color-hex.com/member/girlinthemachine and used #890d20 as a contrasting color.-->
-  <!--Changed from #fffdd1 to a paler #fffee8 as the main content container background color; trying #fffefa as a paler tint of #fffdd1 as the page background color outside the container.-->
+<body style="background-color: #efd4f7;">
+    <br><br><br><br><br>
+    <div style="float: left; padding: 10px;"><img src="images/logo-KanDo2.png" style="height: 100px;"></div>
 </body>
 </html>
+
