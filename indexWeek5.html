@@ -1,23 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Annette Robinson</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width-device-width, initial-scale=1.0">
+  <title> Annette Robinson Week 5 School Waiting List</title>
+  <link rel="stylesheet" type="text/css" href="css/styleWeek5.css">
+  
+    <script type="text/javascript">
+    /*(This is a multi line comment in javascript.)
+        Defining functions in the head that will be called out by onclick buttons in the body.
+        Each function specifies different text for the "schoolInfo" element/paragraph.
+        */
+        function bestHappyInfo() {
+        document.getElementById("schoolInfo").innerHTML = "<a href='#'>Best Happy Elementary School</a> is on the west side of town and has many options for students who wish to focus on the arts.";
+    }
+        function happyTownInfo() {
+        document.getElementById("schoolInfo").innerHTML = "<a href='#'>Happy Town Elementary School</a> is right in the middle of Downtown. Happy Town Elementary welcomes students of all abilities and is proud of its robust special education curriculum.";
+    }
+        function pickwickInfo() {
+        document.getElementById("schoolInfo").innerHTML = "<a href='#'>Pickwick Elementary School</a> is a magnet school with a focus on technology. Students may attend classes in person or virtually.";
+    }
+
+    </script>
 </head>
 <body>
-  <div id="container">  
-    <header>
-      <h1>Web Programming 1 Assignments</h1>
-    </header>
-		<br>
-		  <h2 align="center"><b>Annette Robinson</b></h2>
-        <br>
-        <h3 align="center">This is a placeholder page for my <u>Week 5</u> assignment in Dr. Smith's EME 6930 Web Programming 1 class</h3>
-    <footer>
-		  Copyright 2021, <a style="color: white" href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
-    </footer>
-  </div>
-  <!--Design Notes: Working off the background color #fffdd1, in www.color-hex.com I found the daenerys color palette created by https://www.color-hex.com/member/girlinthemachine and used #890d20 as a contrasting color.-->
-  <!--Changed from #fffdd1 to a paler #fffee8 as the main content container background color; trying #fffefa as a paler tint of #fffdd1 as the page background color outside the container.-->
+    <!--Page heading-->
+    <h1>Happy Town School District</h1>
+    <!--Subheading-->
+    <h2>2021-2022 School Year Registration</h2>
+    <!--What's this page about?-->
+    <p>Happy Town residents, registration for the new school year opens soon!</p>
+    <ol>
+        <li>Review information on each school.</li>
+        <li>Fill in the form to place your child on the waiting list for your preferred school.</li>
+    </ol>
+
+    <!--Buttons for calling out the functions defined in the head-->
+    <input type = "button" onclick = "bestHappyInfo()" value = "Best Happy Elementary School">
+    <input type = "button" onclick = "happyTownInfo()" value = "Happy Town Elementary School">
+    <input type = "button" onclick = "pickwickInfo()" value = "Pickwick Elementary School">
+    <br>
+
+    <!--This paragraph positions the output text from the button clicks above-->
+    <p id="schoolInfo"></p>
+    <br>
+
+    <!--Form with required fields, in a div for ease of CSS styling-->
+    <div>
+        <!--Code in the form tag to submit by email-->
+        <form method="post" action="mailto:afrobinson@usf.edu?subject=Happy Town School Registration">
+            <label for="parentName">Parent Name:</label><br>
+            <input type="text" id="parentName" name="parentName"><br><br>
+            <label for="parentEmail">Parent Email:</label><br>
+            <input type="email" id="parentEmail" name="parentEmail"><br><br>
+            <label for="childName">Child Name:</label><br>
+            <input type="text" id="childName" name="childName"><br><br>
+            <label for="childAge">Child Age:</label><br>
+            <input type="number" id="childAge" name="childAge"><br><br>
+            <!--radio buttons for gender-->
+            <label>Child Gender:</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br><br>
+            <label for="grade">Upcoming Grade:</label><br>
+            <input type="number" id="grade" name="grade"><br><br>
+            <!--school drop down selector-->
+            <label>Preferred School:</label><br>
+            <select>
+                <option>Best Happy Elementary School</option>
+                <option>Happy Town Elementary School</option>
+                <option>Pickwick Elementary School</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
 </body>
 </html>
+

@@ -1,0 +1,156 @@
+﻿ /* ========================================================================================================
+    CSS stylesheet for EME6930 Week 5, FORM with FUNCTIONS for school waiting list.
+        Fonts:
+            Headings are Raleway https://www.fontsquirrel.com/fonts/raleway
+            Text is Merriweather https://github.com/EbenSorkin/Merriweather 
+        Colors:
+	        Color scheme from https://visme.co/blog/website-color-schemes/ (Natural and Earth)
+            #fbeec1 for background, #8d8741 for buttons, #bc986a for button hover, #659dbd for the form div
+        Style:
+            Used tips for styling CSS forms from w3schools.com 
+    ======================================================================================================== */
+
+ body {
+	background-color: #fbeec1;
+    }
+
+ @font-face {
+	font-family:"Raleway";
+	src: url('../assets/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    }
+
+ @font-face {
+	font-family:"Raleway Bold";
+	src: url('../assets/fonts/raleway/Raleway-Bold.ttf') format('truetype');
+    }
+
+ @font-face {
+    font-family:"Merriweather";
+    src: url('../assets/fonts/merriweather/Merriweather-Regular.otf') format('opentype');
+    }
+
+ h1 {
+	font-family: "Raleway Bold", arial, sans-serif;
+    font-size: 30px;
+    }
+
+ h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;	
+	font-family: "Raleway Bold", arial, sans-serif;
+    font-size: 24px;
+    }
+
+ p {
+	font-family: "Merriweather", Helvetica, arial, sans-serif;
+	font-size: 16px;
+    }
+
+ ol {
+    font-size: 15px;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ a:link {
+  color: #659dbd;
+  background-color: transparent;
+    }
+
+ /* ===========================================
+    Styling for the school information buttons
+    =========================================== */   
+ input[type=button] {
+    padding: 5px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #8d8741;
+    color: white;
+    font-weight: bold;
+    font-size: 14.5px;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ input[type=button]:hover {
+    background-color: #bc986a;
+    }
+ 
+ /* ==============================
+    Styling for the form elements
+    ============================== */   
+ div {
+    width: 50%;
+    border-radius: 5px;
+    background-color: #659dbd;
+    padding: 20px;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ input[type=text], select {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ input[type=email], select {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ input[type=number] {
+    width: 15%;
+    padding: 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+      
+ input[type=submit] {
+    width: 25%;
+    background-color: #8d8741;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    padding: 14px 10px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+ input[type=submit]:hover {
+    background-color: #bc986a;
+    }
+
+ input[type=reset] {
+    width: 25%;
+    background-color: #8d8741;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    padding: 14px 10px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+      
+ input[type=reset]:hover {
+    background-color: #bc986a;
+    }
