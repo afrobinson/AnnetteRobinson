@@ -1,23 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Annette Robinson</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width-device-width, initial-scale=1.0">
+  <title>Annette Robinson's Week 7 HW for EME 6390</title>
+  <link rel="stylesheet" type="text/css" href="css/styleWeek7.css">
+
+  <script type = "text/javascript">
+  
+  //Constructor function (upper case first letter for the function name)
+    function Standard (name, description, example) {
+        this.name = name;
+        this.description = description;
+        this.example = example;
+
+  //Function to define a string for the text that will be output from the parameters above
+    this.writeStandard = function() {
+          var str = this.name + ": " + this.description + "<br><br>" + "Example: " + this.example;
+          writeText(str, "standard1");
+        }
+      };
+
+  //Function to write text out to html object
+  function writeText(txt, destination) {
+   document.getElementById(destination).innerHTML = txt;
+   }
+
+  //Variables creating objects by calling the "Standard" constructor function from above with the "new" keyword
+    var standard1 = new Standard("General Standard 1", 
+      "The overall design of the course is made clear to the learner at the beginning of the course.", 
+      "Instructions make clear how to get started and where to find various course components.");
+    var standard2 = new Standard("General Standard 2", 
+      "Learning objectives or competencies describe what learners will be able to do upon completion of the course.", 
+      "The course learning objectives, or course/program competencies, describe outcomes that are measurable.");
+    var standard3 = new Standard("General Standard 3", 
+      "Assessment strategies are integral to the learning process and are designed to evaluate learner progress in achieving the stated learning objectives or mastering the competencies.", 
+      "The assessments measure the stated learning objectives or competencies.");
+    var standard4 = new Standard("General Standard 4", 
+      "Instructional materials enable learners to achieve stated learning objectives or competencies.", 
+      "The instructional materials contribute to the achievement of the stated course and module/unit learning objectives or competencies.");
+    var standard5 = new Standard("General Standard 5", 
+      "Course activities facilitate and support learner interaction and engagement.", 
+      "The learning activities promote the achievement of the stated learning objectives or competencies.");
+    var standard6 = new Standard("General Standard 6", 
+      "Course technologies support learners’ achievement of course objectives or competencies.", 
+      "The tools used in the course support the learning objectives or competencies.");
+    var standard7 = new Standard("General Standard 7", 
+      "The course facilitates learner access to support services essential to learner success.", 
+      "The course instructions articulate or link to a clear description of the technical support offered and how to obtain it.");
+    var standard8 = new Standard("General Standard 8", 
+      "The course design reflects a commitment to accessibility and usability for all learners.", 
+      "Course navigation facilitates ease of use.");
+
+  </script>
 </head>
+
 <body>
   <div id="container">  
     <header>
-      <h1>Web Programming 1 Assignments</h1>
+      <h1 align="center">Web Programming 1 Assignments - Week 7 - Constructors (Annette Robinson)</h1>
     </header>
 		<br>
-		  <h2 align="center"><b>Annette Robinson</b></h2>
-        <br>
-        <h3 align="center">This is a placeholder page for my <u>Week 7</u> assignment in Dr. Smith's EME 6930 Web Programming 1 class</h3>
+      <h2 align="center">Standards from the Quality Matters (QM) <a href="https://www.qualitymatters.org/qa-resources/rubric-standards/cpe-rubric" 
+        target="blank">Continuing and Professional Education Rubric</a></h2>
+      <p>Click on each button to see what the standard is.</p>
+      <p>Full information is available on <a href="https://www.qualitymatters.org/sites/default/files/PDFs/StandardsfromtheQMContinuingandProfessionalEducationRubric.pdf" target="_blank">this page</a> of the Quality Matters website.</p>
+
+
+ <!--Buttons for calling out the text string for each "Standard" object defined in the head-->
+  <input type = "button" onclick= "standard1.writeStandard();" value = "Standard 1">
+  <input type = "button" onclick= "standard2.writeStandard();" value = "Standard 2">
+  <input type = "button" onclick= "standard3.writeStandard();" value = "Standard 3">
+  <input type = "button" onclick= "standard4.writeStandard();" value = "Standard 4">
+  <input type = "button" onclick= "standard5.writeStandard();" value = "Standard 5">
+  <input type = "button" onclick= "standard6.writeStandard();" value = "Standard 6">
+  <input type = "button" onclick= "standard7.writeStandard();" value = "Standard 7">
+  <input type = "button" onclick= "standard8.writeStandard();" value = "Standard 8">
+
+  <!--This paragraph positions the output text from the button clicks above-->
+  <p id="standard1"></p>
+
     <footer>
-		  Copyright 2021, <a style="color: white" href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
+		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
     </footer>
   </div>
-  <!--Design Notes: Working off the background color #fffdd1, in www.color-hex.com I found the daenerys color palette created by https://www.color-hex.com/member/girlinthemachine and used #890d20 as a contrasting color.-->
-  <!--Changed from #fffdd1 to a paler #fffee8 as the main content container background color; trying #fffefa as a paler tint of #fffdd1 as the page background color outside the container.-->
+  
 </body>
+
 </html>

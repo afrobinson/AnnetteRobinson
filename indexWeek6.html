@@ -1,23 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Annette Robinson</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width-device-width, initial-scale=1.0">
+  <title>Annette Robinson's Week 6 Extra Credit HW for EME 6390</title>
+  <link rel="stylesheet" type="text/css" href="css/styleWeek6.css">
+
+  <script type="text/javascript">
+  
+    var standard1 = {
+      name: "QM CPE General Standard 1",
+      description: "The overall design of the course is made clear to the learner at the beginning of the course.",
+      example: "Instructions make clear how to get started and where to find various course components" 
+    }
+        function standard1Info() {
+        document.getElementById("standardsInfo").innerHTML = "The overall design of the course is made clear to the learner at the beginning of the course.";
+    }
+        function standard2Info() {
+        document.getElementById("standardsInfo").innerHTML = "Learning objectives or competencies describe what learners will be able to do upon completion of the course.";
+    }
+        function standard3Info() {
+        document.getElementById("standardsInfo").innerHTML = "Assessment strategies are integral to the learning process and are designed to evaluate learner progress in  achieving the stated learning objectives or mastering the competencies.";
+    }  
+  
+  </script>
 </head>
+
 <body>
   <div id="container">  
     <header>
-      <h1>Web Programming 1 Assignments</h1>
+      <h1 align="center">Web Programming 1 Assignments - Week 6 Extra Credit (Annette Robinson)</h1>
+      <h1 align="center">(Incomplete - See <a href="indexWeek7.html" target="_blank">Week 7</a>)</h1>
     </header>
 		<br>
-		  <h2 align="center"><b>Annette Robinson</b></h2>
-        <br>
-        <h3 align="center">This is a placeholder page for my <u>Week 6</u> assignment in Dr. Smith's EME 6930 Web Programming 1 class</h3>
+      <h3 align="center">Standards from the Quality Matters (QM) <a href="https://www.qualitymatters.org/qa-resources/rubric-standards/cpe-rubric" target="blank">Continuing and Professional Education Rubric</a></h3>
+      <p>Click on each button to see what the standard is.</p>
+      <p>Full information is available on <a href="https://www.qualitymatters.org/sites/default/files/PDFs/StandardsfromtheQMContinuingandProfessionalEducationRubric.pdf" target="_blank">this page</a> of the Quality Matters website.</p>
+
+  <!--Buttons for calling out the variables/functions defined in the head-->
+  <input type = "button" onclick = "standard1Info()" value = "Standard 1">
+  <input type = "button" onclick = "standard2Info()" value = "Standard 2">
+  <input type = "button" onclick = "standard3Info()" value = "Standard 3">
+  <br>
+
+  <!--This paragraph positions the output text from the button clicks above-->
+  <p id="standardsInfo"></p>
+  <br>
+
     <footer>
 		  Copyright 2021, <a style="color: white" href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
     </footer>
   </div>
-  <!--Design Notes: Working off the background color #fffdd1, in www.color-hex.com I found the daenerys color palette created by https://www.color-hex.com/member/girlinthemachine and used #890d20 as a contrasting color.-->
-  <!--Changed from #fffdd1 to a paler #fffee8 as the main content container background color; trying #fffefa as a paler tint of #fffdd1 as the page background color outside the container.-->
+  
 </body>
+
 </html>
