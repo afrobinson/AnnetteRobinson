@@ -6,13 +6,14 @@
             Text is Merriweather https://github.com/EbenSorkin/Merriweather 
         Colors:
 	        Color scheme from https://visme.co/blog/website-color-schemes/ (Natural and Earth)
-            #fbeec1 for background, #8d8741 for buttons, #bc986a for button hover, #659dbd for the container
+            #fbeec1 for background and the form div, #8d8741 for buttons, #bc986a for button hover, #659dbd for the container
             div, #8d6141 for header and footer
             URL links: white for unclicked link, #8d6141 for visited link, #bc986a for link hover, 
     ======================================================================================================== */
 
  body {
-	background-color: #fbeec1;
+    background-image: linear-gradient(#fbeec1, #8d6141);
+    background-color: #fbeec1;
     }
 
  @font-face {
@@ -60,6 +61,7 @@ header {
     background-color: #8d6141;
 	color: white;
 	text-align: center;
+    border-radius: 5px;
 	/*padding: 1px;*/
 }
 
@@ -85,9 +87,9 @@ header {
         position: relative;
         background-color: #659dbd;
         min-height: 600px;
-        width: 90%;
+        width: 85%;
         border-radius: 5px;
-        padding: 20px;
+        padding: 5px 20px 30px;
         margin: 0px auto 0px auto;
     }  
     
@@ -108,7 +110,105 @@ header {
  input[type=button]:hover {
     background-color: #bc986a;
     }
+
+ /* ==============================
+    Styling for the form elements
+    ============================== */   
+ div {
+    position: relative;
+    width: 50%;
+    border-radius: 5px;
+    background-color: #fbeec1;
+    padding: 20px;
+    margin: auto;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ input[type=text], select {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ input[type=email], select {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+
+ input[type=number] {
+    width: 15%;
+    padding: 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
  
+/* min-width seemed to do a better responsive job on the Submit and Reset buttons than messing with the font size.
+  But, not using for this form; using button input for Submit and styling Reset to match */
+ input[type=submit] {
+    min-width: 20%;
+    background-color: #659dbd;
+    color: white;
+    font-weight: bold;
+    /*font-size: max(1.5vw, 1em, 1rem);*/
+    font-size: 15px;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    padding: 10px 7px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+ input[type=submit]:hover {
+    background-color: #bc986a;
+    }
+
+ input[type=reset] {
+    padding: 5px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #8d8741;
+    color: white;
+    font-weight: bold;
+    font-size: 14.5px;
+    font-family: "Merriweather", Helvetica, arial, sans-serif;
+    }
+      
+ input[type=reset]:hover {
+    background-color: #bc986a;
+    }
+
+ /* Styling for the form responses output paragraph */ 
+ #responsesParagraph {
+    /*position: relative;
+    min-height: 600px;*/
+    width: 75%;
+    border: 2px solid #8d6141;
+    border-radius: 5px;
+    background-color: #659dbd;
+    color: white;
+    padding: 5px;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    font-size: 32px;
+}
+    
 footer {
 	position: absolute;
     margin: auto;

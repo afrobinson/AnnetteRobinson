@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width-device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Annette Robinson's Week 7 HW for EME 6390</title>
   <link rel="stylesheet" type="text/css" href="css/styleWeek7.css">
 
@@ -18,7 +19,7 @@
   //Function to define a string for the text that will be output from the parameters above
     this.writeStandard = function() {
           var str = this.name + ": " + this.description + "<br><br>" + "Example: " + this.example;
-          writeText(str, "standard1");
+          writeText(str, "standards");
         }
       };
 
@@ -53,17 +54,38 @@
       "The course design reflects a commitment to accessibility and usability for all learners.", 
       "Course navigation facilitates ease of use.");
 
+  //Function to load a response from user data input in the form
+
+    function writeFormResponses() {
+      var responses="Hello " + document.nameRoleConcern.name.value + ", in your role as " + document.nameRoleConcern.role.value
+       + " your biggest concern is " + document.nameRoleConcern.concern.value + ".";
+      writeText(responses, "formResponses");
+    }
+
+    /*var name = document.getElementById("name").value;
+    document.getElementById("name").innerHTML = document.nameRoleConcern.name.value;
+    var role = document.getElementById("role").value;
+    var concern = document.getElementById("concern").value;
+    
+
+    function responsesFromForm() {
+    document.getElementById("name").innerHTML = document.nameRoleConcern.name.value;
+    document.getElementById("role").innerHTML = document.nameRoleConcern.role.value;
+    document.getElementById("concern").innerHTML = document.nameRoleConcern.concern.value;
+    }*/
+
   </script>
 </head>
 
 <body>
+  
   <div id="container">  
     <header>
-      <h1 align="center">Web Programming 1 Assignments - Week 7 - Constructors (Annette Robinson)</h1>
+      <h1 align="center">Web Programming 1 Assignments&mdash;Week 7&mdash;Constructors<br>Annette Robinson</h1>
     </header>
 		<br>
       <h2 align="center">Standards from the Quality Matters (QM) <a href="https://www.qualitymatters.org/qa-resources/rubric-standards/cpe-rubric" 
-        target="blank">Continuing and Professional Education Rubric</a></h2>
+        target="blank">Continuing and Professional Education (CPE) Rubric</a></h2>
       <p>Click on each button to see what the standard is.</p>
       <p>Full information is available on <a href="https://www.qualitymatters.org/sites/default/files/PDFs/StandardsfromtheQMContinuingandProfessionalEducationRubric.pdf" target="_blank">this page</a> of the Quality Matters website.</p>
 
@@ -79,8 +101,41 @@
   <input type = "button" onclick= "standard8.writeStandard();" value = "Standard 8">
 
   <!--This paragraph positions the output text from the button clicks above-->
-  <p id="standard1"></p>
+  <p id="standards"></p>
 
+  <!--Form with required fields, in a div for ease of CSS styling-->
+  <div>
+    <form name = "nameRoleConcern" onsubmit="return responsesFromForm();" method="post">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+      <!--drop down selector-->
+      <label>Role:</label><br>
+      <select name="role">
+        <option>Course Instructor</option>
+        <option>Instructional Designer</option>
+        <option>Business Professional</option>
+      </select>
+      <br><br>
+      <!--drop down selector-->
+      <label>What is your biggest concern in the design of your CPE course?</label><br>
+      <select name="concern">
+          <option>Learner Engagement</option>
+          <option>Accessibility and Usability</option>
+          <option>Assessment</option>
+      </select>
+      <br><br>
+      <input type = "button" onclick = "writeFormResponses(); return false" value = "Submit">
+      <!--<input type="submit" value="Submit">-->
+      <input type="reset" value="Reset">
+    </form>
+  </div>
+  <br>
+
+      <!--This paragraph positions the output text from the user's responses in the form-->
+  <div id="responsesParagraph"> 
+    <p id="formResponses" ></p>
+  </div>
+  
     <footer>
 		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
     </footer>
