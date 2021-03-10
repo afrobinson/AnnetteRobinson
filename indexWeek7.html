@@ -55,26 +55,14 @@
       "Course navigation facilitates ease of use.");
 
   //Function to load a response from user data input in the form
-
     function writeFormResponses() {
       var responses="Hello " + document.nameRoleConcern.name.value + ", in your role as " + document.nameRoleConcern.role.value
        + " your biggest concern is " + document.nameRoleConcern.concern.value + ".";
       writeText(responses, "formResponses");
     }
 
-    /*var name = document.getElementById("name").value;
-    document.getElementById("name").innerHTML = document.nameRoleConcern.name.value;
-    var role = document.getElementById("role").value;
-    var concern = document.getElementById("concern").value;
-    
-
-    function responsesFromForm() {
-    document.getElementById("name").innerHTML = document.nameRoleConcern.name.value;
-    document.getElementById("role").innerHTML = document.nameRoleConcern.role.value;
-    document.getElementById("concern").innerHTML = document.nameRoleConcern.concern.value;
-    }*/
-
   </script>
+
 </head>
 
 <body>
@@ -103,7 +91,7 @@
   <!--This paragraph positions the output text from the button clicks above-->
   <p id="standards"></p>
 
-  <!--Form with required fields, in a div for ease of CSS styling-->
+  <!--Form in a div for ease of CSS styling-->
   <div>
     <form name = "nameRoleConcern" onsubmit="return responsesFromForm();" method="post">
       <label for="name">Name:</label><br>
@@ -125,17 +113,15 @@
       </select>
       <br><br>
       <input type = "button" onclick = "writeFormResponses(); return false" value = "Submit">
-      <!--<input type="submit" value="Submit">-->
       <input type="reset" value="Reset">
     </form>
   </div>
-  <br>
 
       <!--This paragraph positions the output text from the user's responses in the form-->
   <div id="responsesParagraph"> 
     <p id="formResponses" ></p>
   </div>
-  
+
     <footer>
 		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
     </footer>
