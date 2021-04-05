@@ -2,15 +2,14 @@
 <html lang="en">
 
 <!--EME6930 week 10 homework is building on my week 7 homework
-    Sound: Lines 29-41, 99-108, xxx to xxx and xxx add a piano key sound to the buttons that display the standards
-    Randomness: In the JS, Lines 261-278 and many more lines before. In the HTML, adds a button that displays a random but CPE-relevant image when clicked,
-                and a table for displaying the images on the page.
-    Time: TBD-->
+    Sound: Lines 29-41 and 215-224 add a do-re-mi piano key sound to the buttons that display the standards
+    Randomness: Lines 85-195 and 263-280 add code adapted from the week 10 library of functions to display random images in a table
+                below the form. Line 253 in the form adds a button that displays the random CPE-relevant image when clicked -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Annette Robinson's Week 10 HW for EME 6930</title>
-  <link rel="stylesheet" type="text/css" href="css/styleWeek7.css">
+  <link rel="stylesheet" type="text/css" href="css/styleWeek10.css">
 
   <script type = "text/javascript">
   
@@ -27,19 +26,19 @@
         }
       };
 
-   //adapted from class Week 10
-    var player = new Audio(); // define a global audio object
+      //adapted from class Week 10
+      var player = new Audio(); // define a global audio object
      
-     /*  a global array of sounds
-      */
-     var sounds = ["audio/do-c.m4a", "audio/re-d.m4a", "audio/mi-e.m4a", "audio/fa-f.m4a", "audio/sol-g.m4a", "audio/la-a.m4a", "audio/ti-b", "audio/octave-do-c"];
+      /*  a global array of sounds */
+      var sounds = ["audio/do-c.m4a", "audio/re-d.m4a", "audio/mi-e.m4a", "audio/fa-f.m4a", "audio/sol-g.m4a", "audio/la-a.m4a", "audio/ti-b", "audio/octave-do-c"];
 
-   //from class Week 10: function to load and play sound where s is name of mp3 or wav file
-    function play(s) {
+      //from class Week 10: function to load and play sound where s is name of mp3 or wav file
+      function play(s)
+      {
         player.src = s;
         player.load();
         player.play();
-     }
+      }
 
    //Function to write text out to html object
     function writeText(txt, destination) {
@@ -79,121 +78,122 @@
       writeText(responses, "formResponses");
     }
     
-   //lines 81-192 are from class Week 10, code for showing a random image
-       /*
-     * write image to one of the randomly picked areas desc1 - desc9 and the image is clickable
-     */
-     function writeRandomLocationImage()
-     {
-       var str = "desc";
-       var str2 = "desc";
-       var imageNumberNew = GetRandomRange(1, 9);
-       /* put the background color over the last location */
+   /*lines 85-194 are from class Week 10 (library of random functions), code for showing a random image, but with my images (all photoshopped
+     onto a same-size background to address size differences) and a background image the same color as container color #659dbd
+     And the table lines 262-279 for displaying the images*/
 
-       str += String(lastImageNumber);
-       /*alert("This is the string " + str); */
-       
-       txt =  "<img src='green.jpg' width='105' height='103'>"
-       document.getElementById(str).innerHTML=txt; 
-       /* put the new image in place */
-    
-       str2 += String(imageNumberNew);
-       /*alert("This is the string " + str2); */
-       
-       txt =  "<img src='class.jpg' width='105' height='103' onclick = writeTextRandomPraise()>"
-       document.getElementById(str2).innerHTML=txt;  
-       lastImageNumber = imageNumberNew;
-       
+      /* Write a random image to a location. So need an array of image names, and then randomly pick from that.. */
+
+      /* Function to return an integer in a certain range that is speficied in range specified by the two parameters, upper and lower */
+      function GetRandomRange(lower, upper)
+      {
+        var length, aNumber;
+        length = (upper - lower) + 1;
+        aNumber = Math.floor(Math.random() * length) + lower;
+
+        //  alert("GetRandomRange" + lower + " " + upper + " " + aNumber);
+        return aNumber;
       }
-      // global set of images. learningObjectives from https://www.flickr.com/photos/16584958@N00/5382909592, 
-      var moreImages = ["images/courseDesign.png","images/learningObjectives.jpg", "images/assessment.jpg","images/instructionalMaterials.png",
-       "images/learnerEngagement.png", "educationalTechnology.jpg", "poweranimalpolarbearcrop-105x103.jpeg", "HTUYM-105x103_1_.jpeg"];
+
+      /* Return random string from an array of strings */
+      function randomStringFromArray(anArray)
+      {
+        var aString, len, high_index;
+        len = anArray.length;
+        high_index = len - 1;
+        random_index =  GetRandomRange(0, high_index);
+        aString = anArray[random_index];
+        /* alert("the random string from an array of strings that will be returned is " + aString); */
+        return aString;
+      }
+
+      /* write image to one of the randomly picked areas desc1 - desc9 and the image is clickable */
+      function writeRandomLocationImage()
+      {
+        var str = "desc";
+        var str2 = "desc";
+        var imageNumberNew = GetRandomRange(1, 9);
+        /* put the background color over the last location */
+        str += String(lastImageNumber);
+        /*alert("This is the string " + str); */
+        txt =  "<img src='images/10/containerBlue.jpg' width='150' height='150'>"
+        document.getElementById(str).innerHTML=txt; 
+        /* put the new image in place */
+        str2 += String(imageNumberNew);
+        /*alert("This is the string " + str2); */
+        txt =  "<img src='images/10/learningObjectives.png' width='150' height='150' onclick = writeTextRandomPraise()>"
+        document.getElementById(str2).innerHTML=txt;  
+        lastImageNumber = imageNumberNew;
+      }
+
+      // global set of images 
+      var moreImages = ["images/10/courseDesign.png","images/10/learningObjectives.png", "images/10/assessment.png","images/10/instructionalMaterials.png",
+       "images/10/learnerEngagement.png", "images/10/educationalTechnology.png", "images/10/learnerSupportServices.png", "images/10/digitalAccessibility.png"];
  
-      /* Write a random image (images all the same size) to a random location
-       */
+      /* Write a random image (images all the same size) to a random location */
       function writeRandomImageRandomLocation()
       {
         var str = "desc";
         var str2 = "desc";
         var imageNumberNew = GetRandomRange(1, 9);
-      /* put the background color over the last location */
-
+        /* put the background color over the last location */
         str += String(lastImageNumber);
-      /*alert("This is the string " + str); */
-    
-        txt =  "<img src='green.jpg' width='105' height='103'>"
+        /*alert("This is the string " + str); */
+        txt =  "<img src='images/10/containerBlue.jpg' width='150' height='150'>"
         document.getElementById(str).innerHTML=txt; 
-      /* put the new image in place */
- 
+        /* put the new image in place */
         str2 += String(imageNumberNew);
-      /*alert("This is the string " + str2); */
-    
-        txt =  "<img src='" + randomStringFromArray(moreImages) + "' width='105' height='103' onclick = writeTextRandomPraise()>"
+        /*alert("This is the string " + str2); */
+        txt =  "<img src='" + randomStringFromArray(moreImages) + "' width='150' height='150' onclick = writeTextRandomPraise()>"
         document.getElementById(str2).innerHTML=txt;  
         lastImageNumber = imageNumberNew;
-    
       }
 
-       /*
-      * Function to return an integer in a certain range that is speficied in range speficied by the two paramaters, upper and lower
-      */
-      function GetRandomRange(lower, upper)
-      {
-        var length, aNumber;
-
-        length = (upper - lower) + 1;
-        aNumber = Math.floor(Math.random() * length) + lower;
- 
-      //  alert("GetRandomRange" + lower + " " + upper + " " + aNumber);
- 
-        return aNumber;
-
+      /* Write a random image (images all the same size) to one location */
+      function writeRandomImage()
+      {    
+        var txt;
+        txt =  "<img src='";
+        txt = txt + randomStringFromArray(moreImages); 
+        txt = txt +  "' width='150' height='150' onclick = writeTextRandomPraise()>";
+        alert(txt);
+        document.getElementById("desc0").innerHTML=txt;  
+        lastImageNumber = imageNumberNew;
       }
 
-      /* initialize all the image areas
-       */
+      /* initialize all the image areas */
       function intializeRandomLocationImage()
       {
         var str, i;
-       
-        txt =  "<img src='green.jpg' width='105' height='103'>"
+        txt =  "<img src='images/10/containerBlue.jpg' width='150' height='150'>"
         /* put the background color over each location */
         for (i = 1; i <= 9 ; i++)
         {
-        str = "desc";
-        str += String(i);   
-        document.getElementById(str).innerHTML=txt;     
+          str = "desc";
+          str += String(i);   
+          document.getElementById(str).innerHTML=txt;     
         }   
       }
-      /* initialize the place to write an image, put in an image with the background color. 
-       */
+      
+      /* initialize the place to write an image, put in an image with the background color. */
       function initImageSpot()
       {  
-       
-        txt =  "<img src='green.jpg' width='105' height='103' onclick = writeTextRandomPraise()>"
+        txt =  "<img src='images/10/containerBlue.jpg' width='150' height='150' onclick = writeTextRandomPraise()>"
         document.getElementById("desc0").innerHTML=txt;  
         lastImageNumber = imageNumberNew;
-       
       }
 
-         /*
-          * write image to the desc1 area
-          */
+      /* write image to the desc1 area */
       function writeImage()
       {
-       var txt =  "<img src='class.jpg' width='105' height='103' onclick = writeTextRandomPraise()>"
-       document.getElementById("desc1").innerHTML=txt;
+        var txt =  "<img src='images/10/learningObjectives.png' width='150' height='150' onclick = writeTextRandomPraise()>"
+        document.getElementById("desc1").innerHTML=txt;
       }
-         /*
-          * write image to the desc1 area
-          * We need a global
-          */
-       var lastImageNumber = 1;
-   
-         /* Write a random image to a location. So need an array of image names, and then randomly pick from that.. 
-          */
       
-
+      /* write image to the desc1 area
+          * We need a global */
+      var lastImageNumber = 1;
+      
   </script>
 
 </head>
@@ -209,7 +209,6 @@
         target="blank">Continuing and Professional Education (CPE) Rubric</a></h2>
       <p>Click on each button to see what the standard is.</p>
       <p>Full information is available on <a href="https://www.qualitymatters.org/sites/default/files/PDFs/StandardsfromtheQMContinuingandProfessionalEducationRubric.pdf" target="_blank">this page</a> of the Quality Matters website.</p>
-
 
  <!--Buttons for calling out the text string for each "Standard" object defined in the head
      For week 10, I am adding sound effects
@@ -255,29 +254,42 @@
   </div>
   <br>
   
-      <!--This paragraph positions the output text from the user's responses in the form-->
+    <!--This paragraph positions the output text from the user's responses in the form-->
   <div id="responsesParagraph"> 
     <p id="formResponses" ></p>
   </div>
 
-   <!--this is the table where the images appear. copied from the Week 10 library of functions-->
-  <table width="656" height="221" border="0">
+   <!--this is the table where the images appear. copied from the Week 10 library of functions but adjusted width and height to %-->
+   <table width="75%" height="15%" border="0">
     <tr>
-      <td><p id="desc1"> </p> &nbsp;</td>
+      <td><p id="desc1"> </p>&nbsp;</td>
       <td><p id="desc2"> </p>&nbsp;</td>
       <td><p id="desc3"> </p>&nbsp;</td>
     </tr>
     <tr>
       <td><p id="desc4"> </p>&nbsp;</td>
       <td><p id="desc5"> </p>&nbsp;</td>
-      <td><p id="desc6"> </p> </td>
+      <td><p id="desc6"> </p>&nbsp;</td>
     </tr>
     <tr>
       <td><p id="desc7"> </p>&nbsp;</td>
       <td><p id="desc8"> </p>&nbsp;</td>
       <td><p id="desc9"> </p>&nbsp;</td>
     </tr>
-  </table>
+   </table>
+
+   <!--paragraph to show image sources-->
+   <p>
+     Image sources:
+      <a href="https://www.capital.edu/academics/academic-offices/center-for-excellence-in-learning-and-teaching/about-course-design/" target="_blank">Course Design</a> |
+      <a href="https://www.flickr.com/photos/16584958@N00/5382909592" target="_blank">Learning Objectives</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:Legal_pad_word_assessment.jpg" target="_blank">Assessment</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:WEP_Nutshell,_instructional_materials.svg" target="_blank">Instructional Materials</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:Community_of_inquiry_model.svg" target="_blank">Learner Engagement</a> |
+      <a href="https://www.flickr.com/photos/opensourceway/6006122498" target="_blank">Educational Technology</a> |
+      <a href="https://onlinelearningconsortium.org/learner-services-and-support-keep-calm-culture-on/" target="_blank">Learner Support Services</a> |
+      <a href="https://ode.instructure.com/courses/183/pages/digital-accessibility-checklist?module_item_id=24558" target="_blank">Digital Accessibility</a>
+   </p>
 
     <footer>
 		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
