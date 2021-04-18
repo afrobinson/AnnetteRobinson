@@ -98,17 +98,17 @@
       color: white;
       text-align: center;
       border-radius: 5px;
-      box-sizing:border-box; /* keeps specified height and width regardless of padding etc.*/
+      box-sizing:border-box; /* keeps specified height and width regardless of padding etc. */
       display: block;
     }
 
-    /*setting position:absolute and a bottom margin sets this div at the bottom of the container*/
+    /* setting position:absolute and a bottom margin sets this div at the bottom of the container */
     #bottom-menu {
       width:90%;
       min-height: 20px;
       position: absolute;
       padding: 1%;
-      left:5%; /*setting an appropriate left margin to center this div in the container*/
+      left:5%; /* setting an appropriate left margin to center this div in the container */
       bottom: 5px;
       box-sizing:border-box;
       border: 1px solid #342309;
@@ -127,12 +127,13 @@
       border: 1px solid #342309;
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
-      display: none; /*left menu is replaced with bottom menu for the smaller screen size*/
+      display: none; /* left menu is replaced with bottom menu for the smaller screen size */
     }
 
+    /* This div will hold an image and a form for user input/quiz to see which literary character they are like */
     #mainContent {
       /* float:right; (commented out as this is not floating for the smaller screen size) */
-      width:100%; /*full width for the smaller screen size*/
+      width:100%; /* full width for the smaller screen size */
       min-height:400px;
       padding:1%;
       box-sizing:border-box;
@@ -153,7 +154,7 @@
 	  font-size: 14px;
 	  text-align: center;
       box-sizing:border-box;
-      display: none; /*replacing footer with the bottom menu for the small screen size*/
+      display: none; /* replacing footer with the bottom menu for the small screen size */
     }
 }
 
@@ -202,7 +203,7 @@
       text-align: center;
       margin: auto;
       font-family: "Raleway", arial, sans-serif;
-      display: none; /*bottom menu is replaced with left menu for the larger screen size*/
+      display: none; /* bottom menu is replaced with left menu for the larger screen size */
     }
 
     #left-menu {
