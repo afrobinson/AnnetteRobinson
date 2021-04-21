@@ -1,0 +1,246 @@
+﻿ /* =================================================================
+    CSS stylesheet for EME6930 Final Project
+    Week 11, responsive web page shell
+        When display is "none", that div does not appear on that screen size. When display is "block", it is visible (block always needed?).
+    Starting with fonts and colors from Week 10
+    Fonts:
+        Headings are Raleway https://www.fontsquirrel.com/fonts/raleway
+        Text is Merriweather https://github.com/EbenSorkin/Merriweather 
+    Colors:
+        Color scheme from https://visme.co/blog/website-color-schemes/ (Natural and Earth)
+        #fbeec1 for background and the form div, #8d8741 for buttons, #bc986a for button hover, #659dbd for the container div,
+        #8d6141 for header (and possibly footer)
+        URL links: white for unclicked link, #8d6141 for visited link, #bc986a for link hover
+    Borders: darker brown #342309 to show positioning of divs, might remove these later
+    ================================================================= */
+
+ body {
+    background-image: linear-gradient(#fbeec1, #8d6141);
+    background-color: #fbeec1;
+    }
+
+ @font-face {
+	font-family:"Raleway";
+	src: url('../assets/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    }
+
+ @font-face {
+	font-family:"Raleway Bold";
+	src: url('../assets/fonts/raleway/Raleway-Bold.ttf') format('truetype');
+    }
+
+ @font-face {
+    font-family:"Merriweather";
+    src: url('../assets/fonts/merriweather/Merriweather-Regular.otf') format('opentype');
+    }
+
+ h1 {
+	font-family: "Raleway Bold", arial, sans-serif;
+    font-size: 30px;
+    }
+
+ h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;	
+	font-family: "Raleway Bold", arial, sans-serif;
+    font-size: 24px;
+    }
+
+ p {
+	font-family: "Merriweather", Helvetica, arial, sans-serif;
+	font-size: 16px;
+    }
+
+ /* Styling for the URL links */
+ a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    }
+ a:visited {
+    color: #8d6141;
+    background-color: transparent;
+    text-decoration: none;
+    }
+ a:hover {
+    color: #bc986a;
+    background-color: transparent;
+    text-decoration: underline;
+    }
+
+ /* ================================================================= 
+    This section of css is for screens under 400px wide. 
+    Menu is at the bottom instead of on the left (replacing the footer).
+    Main content fills the width.
+    ================================================================= */ 
+
+ @media screen and (max-width: 399px) {
+ 
+    /* Styling for the outer container */ 
+    #container {
+      position: relative;
+      background-color: #659dbd;
+      min-height: 600px;
+      width: 95%;
+      border-radius: 5px;
+      padding: 1%;
+      margin: auto;
+      display: block;
+    }  
+
+    header {
+      height: 10%;
+      width: 100%;
+      padding: 1%;
+      margin-top: 0%;
+      position: relative;
+      background-color: #8d6141;
+      color: white;
+      text-align: center;
+      border-radius: 5px;
+      box-sizing:border-box; /* keeps specified height and width regardless of padding etc. */
+      display: block;
+    }
+
+    /* setting position:absolute and a bottom margin sets this div at the bottom of the container */
+    #bottom-menu {
+      width:90%;
+      min-height: 20px;
+      position: absolute;
+      padding: 1%;
+      left:5%; /* setting an appropriate left margin to center this div in the container */
+      bottom: 5px;
+      box-sizing:border-box;
+      border: 1px solid #342309;
+      text-align: center;
+      margin: auto;
+      font-family: "Raleway", arial, sans-serif;
+      display: block;
+    }
+
+    #left-menu {
+      float:left;
+      width:20%;
+      min-height: 400px;
+      padding: 1%;
+      box-sizing:border-box;
+      border: 1px solid #342309;
+      font-family: "Raleway", arial, sans-serif;
+      text-align: center;
+      display: none; /* left menu is replaced with bottom menu for the smaller screen size */
+    }
+
+    /* This div will hold an image and a form for user input to see which literary character they are like */
+    #mainContent {
+      /* float:right; (commented out as this is not floating for the smaller screen size) */
+      width:100%; /* full width for the smaller screen size */
+      min-height:400px;
+      padding:1%;
+      box-sizing:border-box;
+      border: 1px solid #342309;
+      font-family: "Raleway", arial, sans-serif;
+      display: block;
+    }
+
+    footer {
+	  position: absolute;
+     margin: auto;
+	  height: 5%;
+	  width: 100%;
+     padding: 1%;
+	  color: white;
+	  bottom: 0px;
+	  font-family: "Raleway Bold", Helvetica, sans-serif;
+	  font-size: 14px;
+	  text-align: center;
+     box-sizing:border-box;
+     display: none; /* replacing footer with the bottom menu for the small screen size */
+     }
+}
+
+ /* =================================================================
+    This section of css is for screens 400px wide and greater.
+    Menu floats left, main content floats right.
+    ================================================================= */
+
+ @media screen and (min-width: 400px) {
+
+    /* Styling for the outer container */ 
+    #container {
+      position: relative;
+      background-color: #659dbd;
+      min-height: 600px;
+      width: 95%;
+      border-radius: 5px;
+      padding: 1%;
+      margin: auto;
+      }  
+
+    header {
+      height: 10%;
+      width: 100%;
+      padding: 1%;
+      margin-top: 0%;
+      position: relative;
+      background-color: #8d6141;
+      color: white;
+      text-align: center;
+      border-radius: 5px;
+      box-sizing:border-box;
+      display: block;
+      }
+
+    #bottom-menu {
+      width:90%;
+      min-height: 20px;
+      position: absolute;
+      padding: 1%;
+      left:5%;
+      bottom: 5px;
+      box-sizing:border-box;
+      border: 1px solid #342309;
+      text-align: center;
+      margin: auto;
+      font-family: "Raleway", arial, sans-serif;
+      display: none; /* bottom menu is replaced with left menu for the larger screen size */
+      }
+
+    #left-menu {
+      float:left;
+      width:20%;
+      min-height: 400px;
+      padding: 1%;
+      box-sizing:border-box; 
+      border: 1px solid #342309;
+      font-family: "Raleway", arial, sans-serif;
+      text-align: center;
+      display: block;
+      }
+
+    #mainContent {
+      float:right;
+      width:75%;
+      min-height:425px;
+      padding:1%;
+      border: 1px solid #342309;
+      font-family: "Raleway", arial, sans-serif;
+      text-align: center;
+      display: block;
+      }
+
+    footer {
+	  position: absolute;
+      margin: auto;
+	  height: 5%;
+	  width: 100%;
+      padding: 1%;
+      box-sizing:border-box;
+	  color: white;
+	  bottom: 0px;
+	  font-family: "Raleway Bold", Helvetica, sans-serif;
+	  font-size: 14px;
+	  text-align: center;
+      display:block;
+      }
+
+}
