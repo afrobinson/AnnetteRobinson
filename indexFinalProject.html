@@ -35,9 +35,10 @@
       document.getElementById(destination).innerHTML = txt;
         }
 
-      /* Function to load a response from user data input in the form.
+      /* Function to identify which character the user is most like (depending on which form options they selected) 
+          and output user's choices and most-like character to a paragraph below the form.
          If user selects 2 of 3 characteristics (or more) for any one character, they are most like that character.
-         If user selects a different-character's option for each selector, they "share character traits of several" characters. */
+         If user selects a different character's option for each selector, they "share character traits of several" characters. */
       function writeFormResponses() {
         if ((document.whichCharacter.food.value == "Honey" && document.whichCharacter.action.value == "Eat honey")
           || (document.whichCharacter.food.value == "Honey" && document.whichCharacter.fear.value == "Running out of honey")
@@ -93,6 +94,26 @@
           }
       }
 
+      //script for the left dropdown menu, adapted from w3schools.com
+      /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+
     </script>
  </head>
 
@@ -102,13 +123,27 @@
        <h1>Who Am I?</h1>
      </header>
      <br>
-     <div id="left-menu">Left Menu will go here</div>
+     
+     <div id="left-menu">
+       <p>Left Menu will go here (larger screen size)</p>
+        <!--Left dropdown menu (adapted from w3schools.com)-->
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+      </div>
+
      <div id="mainContent">
        <h2 style="text-align:center">Welcome to the Hundred Acre Wood! Are you most like Winnie the Pooh, Eeyore, Piglet, Tigger, or Rabbit?
          Try it and see!</h2>
        <br>
      
-         <!--Form div-->
+         <!--A form with dropdown selectors for the user to choose character traits (5 characters/options)-->
         <div id="characterForm">
           <form name = "whichCharacter" onsubmit="return responsesFromForm();" method="post">
             <label for="name">Name:</label><br>

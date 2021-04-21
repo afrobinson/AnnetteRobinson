@@ -1,7 +1,5 @@
 ﻿ /* =================================================================
     CSS stylesheet for EME6930 Final Project
-    Week 12, starts adding content and interaction
-    This week's CSS adds styling for the form
         When display is "none", that div does not appear on that screen size. When display is "block", it is visible.
     Starting with fonts and colors from Week 10
     Fonts:
@@ -128,7 +126,8 @@
       border: 1px solid #342309;
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
-      display: none; /* left menu is replaced with bottom menu for the smaller screen size */
+      display: none; /* display:none means this div will not be visible on the smaller screen size.
+                        Left menu is replaced with bottom menu for screens under 400px wide */
     }
 
     /* This div will hold an image and a form for user input to see which Winnie the Pooh character they are like */
@@ -291,6 +290,48 @@
       text-align: center;
       display: block;
       }
+
+    /* Dropdown menu elements for the left menu, adapted from w3schools.com */
+    .dropbtn {
+      background-color: #8d6141;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #2980B9;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown a:hover {background-color: #ddd;}
+    
+    .show {display: block;}
+  
+    /*end of styling for the left dropdown menu */
 
     #mainContent {
       float:right;
