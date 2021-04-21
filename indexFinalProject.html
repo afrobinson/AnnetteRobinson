@@ -1,12 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
  <head>
-   <!--html for responsive website shell-->
    <meta charset="utf-8">
    <meta name="viewport" content="width-device-width, initial-scale=1.0">
    <title>Annette Robinson's Final Project (EME 6930)</title>
    <link rel="stylesheet" type="text/css" href="css/styleFinalProject.css">
+    <script type = "text/javascript">
+
+          //Inset: I wanted to use a Constructor function for the characters but it might not be the best option. Not being used so far.
+            function Character (name, food, action, fear) {
+            this.name = name;
+            this.food = food;
+            this.action = action;
+            this.fear = fear;
+
+            //Function to define a string for the text that will be output from the parameters above
+            this.writeCharacter = function() {
+                var str = "You are " + this.name + "! Your favorite food is " + this.food + ", your favorite thing to do is " + this.action
+                          + ", and the thing you are most afraid of is " + this.fear + " .";
+                writeText(str, "character"); //See the character paragraph in the html where the output will be written
+                }
+              };
+
+            //Variables creating objects by calling the "Character" constructor function from above with the "new" keyword
+            var character1 = new Character("Winnie the Pooh", "honey", "eat honey", "running out of honey");
+            var character2 = new Character("Eeyore", "thistles", "have a birthday", "losing your tail");
+            var character3 = new Character("Piglet", "haycorns", "hang out with Winnie the Pooh", "just about everything");
+            var character4 = new Character("Tigger", "extract of malt", "bounce", "heights");
+            var character5 = new Character("Rabbit", "carrots", "organize everything", "messy people");
+
+      //Function to write text out to the html object
+      function writeText(txt, destination) {
+      document.getElementById(destination).innerHTML = txt;
+        }
+
+      //Function to load a response from user data input in the form. 2 of 3 characteristics (or more) for any character = most like that character
+      function writeFormResponses() {
+        if ((document.whichCharacter.food.value == "Honey" && document.whichCharacter.action.value == "Eat honey")
+          || (document.whichCharacter.food.value == "Honey" && document.whichCharacter.fear.value == "Running out of honey")
+          || (document.whichCharacter.action.value == "Eat honey" && document.whichCharacter.fear.value == "Running out of honey"))
+          {
+          var responses="Hello " + document.whichCharacter.name.value + ", your favorite food is " + document.whichCharacter.food.value
+            + ", your favorite thing to do is " + document.whichCharacter.action.value + ", and your greatest fear is "
+            + document.whichCharacter.fear.value + ". You are most like Winnie the Pooh!";
+            writeText(responses, "formResponses");
+          }
+        else if ((document.whichCharacter.food.value == "Thistles" && document.whichCharacter.action.value == "Have a birthday")
+          || (document.whichCharacter.food.value == "Thistles" && document.whichCharacter.fear.value == "Losing my tail")
+          || (document.whichCharacter.action.value == "Have a birthday" && document.whichCharacter.fear.value == "Losing my tail"))
+          {
+          var responses="Hello " + document.whichCharacter.name.value + ", your favorite food is " + document.whichCharacter.food.value
+            + ", your favorite thing to do is " + document.whichCharacter.action.value + ", and your greatest fear is "
+            + document.whichCharacter.fear.value + ". You are most like Eeyore!";
+            writeText(responses, "formResponses");
+          }
+        else if ((document.whichCharacter.food.value == "Haycorns" && document.whichCharacter.action.value == "Hang out with Winnie the Pooh")
+          || (document.whichCharacter.food.value == "Haycorns" && document.whichCharacter.fear.value == "Just about everything")
+          || (document.whichCharacter.action.value == "Hang out with Winnie the Pooh" && document.whichCharacter.fear.value == "Just about everything"))
+          {
+          var responses="Hello " + document.whichCharacter.name.value + ", your favorite food is " + document.whichCharacter.food.value
+            + ", your favorite thing to do is " + document.whichCharacter.action.value + ", and your greatest fear is "
+            + document.whichCharacter.fear.value + ". You are most like Piglet!";
+            writeText(responses, "formResponses");
+          }
+        else if ((document.whichCharacter.food.value == "Extract of Malt" && document.whichCharacter.action.value == "Bounce")
+          || (document.whichCharacter.food.value == "Extract of Malt" && document.whichCharacter.fear.value == "Heights")
+          || (document.whichCharacter.action.value == "Bounce" && document.whichCharacter.fear.value == "Heights"))
+          {
+          var responses="Hello " + document.whichCharacter.name.value + ", your favorite food is " + document.whichCharacter.food.value
+            + ", your favorite thing to do is " + document.whichCharacter.action.value + ", and your greatest fear is "
+            + document.whichCharacter.fear.value + ". You are most like Tigger!";
+            writeText(responses, "formResponses");
+          }
+        else if ((document.whichCharacter.food.value == "Carrots" && document.whichCharacter.action.value == "Organize everything")
+          || (document.whichCharacter.food.value == "Carrots" && document.whichCharacter.fear.value == "Messy people")
+          || (document.whichCharacter.action.value == "Organize everything" && document.whichCharacter.fear.value == "Messy people"))
+          {
+          var responses="Hello " + document.whichCharacter.name.value + ", your favorite food is " + document.whichCharacter.food.value
+            + ", your favorite thing to do is " + document.whichCharacter.action.value + ", and your greatest fear is "
+            + document.whichCharacter.fear.value + ". You are most like Rabbit!";
+            writeText(responses, "formResponses");
+          }
+        else {
+          var responses="Hello " + document.whichCharacter.name.value + ", your favorite food is " + document.whichCharacter.food.value
+            + ", your favorite thing to do is " + document.whichCharacter.action.value + ", and your greatest fear is "
+            + document.whichCharacter.fear.value + ". You share character traits of several residents of the Hundred Acre Wood! "
+            + "You will fit right in with Winnie the Pooh and his friends!";
+            writeText(responses, "formResponses");
+          }
+      }
+
+    </script>
  </head>
 
  <body>
@@ -17,15 +102,65 @@
      <br>
      <div id="left-menu">Left Menu will go here</div>
      <div id="mainContent">
-       <h2 style="text-align:center">Main page content will go here (floats to right of menu for larger screens).
-         Image and form for users to take a quiz on which literary character they are like.</h2>
+       <h2 style="text-align:center">Welcome to the Hundred Acre Wood! Are you most like Winnie the Pooh, Eeyore, Piglet, Tigger, or Rabbit?
+         Try it and see!</h2>
        <br>
-       <p style="text-align:center">This is a responsive shell for my <u>Final Project</u> in Dr. Smith's EME 6930 Web Programming 1 class</p>
-     </div>
+     
+         <!--Form div-->
+        <div id="characterForm">
+          <form name = "whichCharacter" onsubmit="return responsesFromForm();" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <!--drop down selectors-->
+            <label>Favorite Food:</label><br>
+            <select name="food">
+              <option selected></option>
+              <option>Honey</option>
+              <option>Thistles</option>
+              <option>Haycorns</option>
+              <option>Extract of Malt</option>
+              <option>Carrots</option>
+            </select>
+            <br><br>
+            <label>Favorite Thing to Do:</label><br>
+            <select name="action">
+              <option selected></option>
+              <option>Eat honey</option>
+              <option>Have a birthday</option>
+              <option>Hang out with Winnie the Pooh</option>
+              <option>Bounce</option>
+              <option>Organize everything</option>
+            </select>
+            <br><br>
+            <label>Greatest Fear:</label><br>
+            <select name="fear">
+              <option selected></option>
+              <option>Running out of honey</option>
+              <option>Losing my tail</option>
+              <option>Just about everything</option>
+              <option>Heights</option>
+              <option>Messy people</option>
+            </select>
+            <br><br>
+            <input type = "button" onclick = "writeFormResponses(); return false" value = "Submit">
+            <input type = "reset" value = "Reset">
+          </form>
+        </div>
+
+        <br>
+        <!--This paragraph positions the output text from the user's responses in the form-->
+        <div id="responsesParagraph"> 
+          <p id="formResponses" ></p>
+        </div>
+
+      </div>
+
      <div id="bottom-menu">Bottom Menu will go here (for smaller screens)</div>
+
      <footer>
 		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
      </footer>
+
    </div>
  
   </body>

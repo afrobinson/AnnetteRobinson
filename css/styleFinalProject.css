@@ -80,7 +80,7 @@
     #container {
       position: relative;
       background-color: #659dbd;
-      min-height: 600px;
+      min-height: 900px;
       width: 95%;
       border-radius: 5px;
       padding: 1%;
@@ -130,7 +130,7 @@
       display: none; /* left menu is replaced with bottom menu for the smaller screen size */
     }
 
-    /* This div will hold an image and a form for user input/quiz to see which literary character they are like */
+    /* This div will hold an image and a form for user input to see which Winnie the Pooh character they are like */
     #mainContent {
       /* float:right; (commented out as this is not floating for the smaller screen size) */
       width:100%; /* full width for the smaller screen size */
@@ -142,20 +142,93 @@
       display: block;
     }
 
+    /* Styling for the form elements */   
+    #characterForm {
+      position: relative;
+      width: 50%;
+      border-radius: 5px;
+      background-color: #fbeec1;
+      padding: 20px;
+      margin: auto;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      display: block;
+      }
+
+    input[type=text], select {
+      width: 75%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      }
+
+    /* Styling for the Submit button */   
+    input[type=button] {
+      padding: 5px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #8d8741;
+      color: white;
+      font-weight: bold;
+      font-size: 14.5px;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      }
+
+    input[type=button]:hover {
+      background-color: #bc986a;
+      }
+   
+    /* Styling for the Reset button */     
+    input[type=reset] {
+      padding: 5px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #8d8741;
+      color: white;
+      font-weight: bold;
+      font-size: 14.5px;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      }
+        
+    input[type=reset]:hover {
+      background-color: #bc986a;
+      }
+
+    /* Styling for the form responses output paragraph */ 
+    #responsesParagraph {
+      width: 75%;
+      /*border: 2px solid #8d6141;
+      border-radius: 5px;*/
+      background-color: #659dbd;
+      color:darkblue;
+      padding: 2px;
+      margin: 0px auto 0px auto;
+      text-align: center;
+      font-weight: bold;
+      display: block;
+      }
+
     footer {
 	  position: absolute;
-      margin: auto;
+     margin: auto;
 	  height: 5%;
 	  width: 100%;
-      padding: 1%;
+     padding: 1%;
 	  color: white;
 	  bottom: 0px;
 	  font-family: "Raleway Bold", Helvetica, sans-serif;
 	  font-size: 14px;
 	  text-align: center;
-      box-sizing:border-box;
-      display: none; /* replacing footer with the bottom menu for the small screen size */
-    }
+     box-sizing:border-box;
+     display: none; /* replacing footer with the bottom menu for the small screen size */
+     }
 }
 
 
@@ -170,12 +243,12 @@
     #container {
       position: relative;
       background-color: #659dbd;
-      min-height: 600px;
+      min-height: 900px;
       width: 95%;
       border-radius: 5px;
       padding: 1%;
       margin: auto;
-    }  
+      }  
 
     header {
       height: 10%;
@@ -189,7 +262,7 @@
       border-radius: 5px;
       box-sizing:border-box;
       display: block;
-    }
+      }
 
     #bottom-menu {
       width:90%;
@@ -204,7 +277,7 @@
       margin: auto;
       font-family: "Raleway", arial, sans-serif;
       display: none; /* bottom menu is replaced with left menu for the larger screen size */
-    }
+      }
 
     #left-menu {
       float:left;
@@ -216,7 +289,7 @@
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
       display: block;
-    }
+      }
 
     #mainContent {
       float:right;
@@ -227,21 +300,94 @@
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
       display: block;
-    }
+      }
+
+    /* Styling for the form elements */   
+    #characterForm {
+      position: relative;
+      width: 50%;
+      border-radius: 5px;
+      background-color: #fbeec1;
+      padding: 20px;
+      margin: auto;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      display: block;
+      }
+
+    input[type=text], select {
+      width: 75%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      }
+
+    /* Styling for the Submit button */   
+      input[type=button] {
+      padding: 5px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #8d8741;
+      color: white;
+      font-weight: bold;
+      font-size: 14.5px;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      }
+
+    input[type=button]:hover {
+      background-color: #bc986a;
+      }
+
+    /* Styling for the Reset button */   
+    input[type=reset] {
+      padding: 5px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #8d8741;
+      color: white;
+      font-weight: bold;
+      font-size: 14.5px;
+      font-family: "Merriweather", Helvetica, arial, sans-serif;
+      }
+        
+    input[type=reset]:hover {
+      background-color: #bc986a;
+      }
+
+    /* Styling for the form responses output paragraph */ 
+    #responsesParagraph {
+      width: 75%;
+      /*border: 2px solid #8d6141;
+      border-radius: 5px;*/
+      background-color: #659dbd;
+      color:darkblue;
+      padding: 2px;
+      margin: 0px auto 0px auto;
+      text-align: center;
+      font-weight: bold;
+      display: block;
+      }
 
     footer {
 	  position: absolute;
-      margin: auto;
+     margin: auto;
 	  height: 5%;
 	  width: 100%;
-      padding: 1%;
-      box-sizing:border-box;
+     padding: 1%;
+     box-sizing:border-box;
 	  color: white;
 	  bottom: 0px;
 	  font-family: "Raleway Bold", Helvetica, sans-serif;
 	  font-size: 14px;
 	  text-align: center;
-      display:block;
+     display:block;
     }
 
 }
