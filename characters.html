@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Annette Robinson's Final Project (EME 6930)</title>
+   <link rel="stylesheet" type="text/css" href="css/styleFinalProject.css">
+    <script type = "text/javascript">
+
+          //Constructor function for the characters
+          //Event handlers on an image for each character
+            function Character (name, food, action, fear) {
+            this.name = name;
+            this.food = food;
+            this.action = action;
+            this.fear = fear;
+
+            //Function to define a string for the text that will be output from the parameters above
+            this.writeCharacter = function() {
+                var str = "I am " + this.name + "! My favorite food is " + this.food + ", my favorite thing to do is " + this.action
+                          + ", and what I most fear is " + this.fear + ".";
+                writeText(str, "character"); //See the character paragraph in the html where the output will be written
+                }
+              };
+
+            //Variables creating objects by calling the "Character" constructor function from above with the "new" keyword
+            var character1 = new Character("Winnie the Pooh", "honey", "eat honey", "running out of honey");
+            var character2 = new Character("Eeyore", "thistles", "have a birthday", "losing my tail");
+            var character3 = new Character("Piglet", "haycorns", "hang out with Winnie the Pooh", "-just about everything!");
+            var character4 = new Character("Tigger", "extract of malt", "bounce", "heights");
+            var character5 = new Character("Rabbit", "carrots", "organize everything", "messy people");
+
+      //Function to write text out to the html object
+      function writeText(txt, destination) {
+      document.getElementById(destination).innerHTML = txt;
+        }
+
+        //javascript to play sounds when a character's image is clicked
+        var player = new Audio(); // define a global audio object
+     
+        /* a global array of sounds for the characters (from https://hostbebe.tripod.com/Sounds.html and https://www.angelfire.com/me2/pooh2/sounds.html) */
+        var sounds = ["audio/poohRumbly.wav", "audio/eeyore.wav", "audio/piglet1.wav", "audio/tigger.wav", "audio/poohOnRabbit.wav"];
+
+        //function to load and play sound where s is name of mp3 or wav file
+        function play(s) {
+          player.src = s;
+          player.load();
+          player.play();
+        }
+
+      //script for the left dropdown menu (larger screen size), adapted from w3schools.com
+      // When the user clicks on the button, toggle between hiding and showing the dropdown content 
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+
+
+    </script>
+ </head>
+
+ <body>
+   <div id="container">  
+     <header>
+       <div id="who">
+       <h1>Who Am I?</h1>
+      </div>
+     </header>
+     <br>
+     
+     <div id="left-menu">
+       <!--Accordion menu with 3 links in 1 panel-->
+          <!--Panel 1 - Home page-->
+        <button class="accordion">Menu</button>
+       <div class="panel">
+        <h3><a href="indexFinalProject.html">Home</a></h3>
+        <h3><a class="active" href="characters.html">The Characters</a></h3>
+        <h3><a href="about.html">About This Site</a></h3>
+        <br>
+       </div>
+
+        <!--Left dropdown menu (adapted from w3schools.com)
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>    -->
+
+      </div>
+
+     <div id="mainContent">
+       <h2 style="text-align:center">The Characters</h2>
+       <br>
+       <p>All the characters who live in the Hundred Acre Wood can be found in the 
+         <a href="https://www.amazon.com/A.-A.-Milne/e/B000AP7ID2%3Fref=dbs_a_mng_rwt_scns_share" target="_blank">Winnie the Pooh books by A.A. Milne.</a></p> 
+       <p>Click or tap your favorite!</p>
+
+        <!--Images are responsive. Onclick event handler plays a sound and writes a description for each character-->
+
+       	<!--Winnie the Pooh from https://www.disneyclips.com/images/images/winnie-the-pooh-honey.png-->
+				<div class="characters">
+          <input type = "image" src="images/winnie.png" class="responsive" onclick= "play('audio/poohRumbly.wav'); character1.writeCharacter();">
+        </div>
+        <!--Piglet from https://3.bp.blogspot.com/-VeG0pJ_kIno/T8-SeE28xNI/AAAAAAAAGqI/cRtEuuNcOGU/s1600/free_walt_disney_piglet_wallpaper.png-->
+				<div class="characters">
+          <input type = "image" src="images/piglet.png" class="responsive" onclick = "play('audio/piglet1.wav'); character3.writeCharacter();">
+          </div>
+        <!--Eeyore from https://www.disneyclips.com/images/images/eeyore25.png-->
+				<div class="characters">
+          <input type="image" src="images/eeyore2.png" class="responsive" onclick="play('audio/eeyore.wav'); character2.writeCharacter();">
+          </div>
+        <!--Tigger from https://www.disneyclips.com/images/images/tigger33.png-->
+				<div class="characters">
+          <input type="image" src="images/tigger.png" class="responsive" onclick="play('audio/tigger.wav'); character4.writeCharacter();">
+          </div>
+        <!--Rabbit from https://www.disneyclips.com/images3/images/rabbit.png-->
+				<div class="characters">
+          <input type="image" src="images/rabbit.png" class="responsive" onclick="play('audio/poohOnRabbit.wav'); character5.writeCharacter();">
+          </div>
+
+        <!--Each image below has an event handler that outputs text from its character (constructor) to the outputParagraph-->
+        <!--trying instead each character in a styled div
+       	<!--Winnie the Pooh from https://www.disneyclips.com/images/images/winnie-the-pooh-honey.png
+				<div style="float: left; padding: 15px;">
+          <input type = "image" src="images/winnie.png" style="height: 160px;" onclick= "character1.writeCharacter();">
+        </div>
+        <!--Piglet from https://3.bp.blogspot.com/-VeG0pJ_kIno/T8-SeE28xNI/AAAAAAAAGqI/cRtEuuNcOGU/s1600/free_walt_disney_piglet_wallpaper.png
+          <div style="float: left; padding: 15px;">
+          <input type = "image" src="images/piglet.png" style="height: 160px;" onclick = "character3.writeCharacter();">
+          </div>
+        <!--Eeyore from https://www.disneyclips.com/images/images/eeyore25.png
+          <div style="float: left; padding: 15px;">
+          <input type="image" src="images/eeyore2.png" style="height: 160px;" onclick="character2.writeCharacter();">
+          </div>
+        <!--Tigger from https://www.disneyclips.com/images/images/tigger33.png
+          <div style="float: left; padding: 15px;">
+          <input type="image" src="images/tigger.png" style="height: 160px;" onclick="character4.writeCharacter();">
+          </div>
+        <!--Rabbit from https://www.disneyclips.com/images3/images/rabbit.png
+        <div style="float: left; padding: 15px;">
+          <input type="image" src="images/rabbit.png" style="height: 160px;" onclick="character5.writeCharacter();">
+          </div>
+        -->
+
+        <!--</div>-->
+
+        <br><br><br><br><br>
+
+        <!--Adjust the text and include a link to a web page on each character-->
+           <!--<br>-->
+        <!--This paragraph positions the output text when the user clicks a character's image above-->
+        <div id="outputParagraph"> 
+          <p id="character"></p>
+        </div>
+
+      </div>
+
+     <div id="bottom-menu">
+
+              <!--Bottom? dropdown menu (adapted from w3schools.com)-->
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a class="active" href="indexFinalProject.html">Home</a>
+            <a href="characters.html">The Characters</a>
+            <a href="about.html">About This Site</a>
+          </div>
+        </div>
+
+
+       <!--
+       <button class="accordion">Menu *Change to nav menu like 6207</button>
+       <div class="panel">
+        <h2> <a href="#home">Home</a></h2>
+        <h2><a href="#about">The Characters</a></h2>
+        <h2><a href="#contact">About This Site</a></h2>
+       </div>
+              -->
+      
+      <!--go to a dropdown menu instead
+      Unordered list for the bottom menu
+      <ul>
+        <li><a class="active" href="indexFinalProject.html">Home</a></li>
+        <li><a href="characters.html">The Characters</a></li>
+        <li><a href="about.html">About This Site</a></li>
+      </ul>
+            -->
+
+     </div>
+
+
+
+     <!--//script for the bottom accordion menu (smaller screen size)
+      ***LEARN THIS!!! before presenting this to the class***
+        Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons.
+         The "active" class is used to add a background color to the current button when its belonging panel is open.
+         The "show" class is used to open the specific accordion panel 
+        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
+      <script type = "text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+          }
+        }
+      </script>
+
+     <footer>
+		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
+     </footer>
+
+   </div>
+ 
+  </body>
+</html>

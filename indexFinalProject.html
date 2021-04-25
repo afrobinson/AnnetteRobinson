@@ -8,28 +8,7 @@
    <link rel="stylesheet" type="text/css" href="css/styleFinalProject.css">
     <script type = "text/javascript">
 
-          //Inset: I wanted to use a Constructor function for the characters but it might not be the best option. Not being used so far.
-            function Character (name, food, action, fear) {
-            this.name = name;
-            this.food = food;
-            this.action = action;
-            this.fear = fear;
-
-            //Function to define a string for the text that will be output from the parameters above
-            this.writeCharacter = function() {
-                var str = "You are " + this.name + "! Your favorite food is " + this.food + ", your favorite thing to do is " + this.action
-                          + ", and the thing you are most afraid of is " + this.fear + " .";
-                writeText(str, "character"); //See the character paragraph in the html where the output will be written
-                }
-              };
-
-            //Variables creating objects by calling the "Character" constructor function from above with the "new" keyword
-            var character1 = new Character("Winnie the Pooh", "honey", "eat honey", "running out of honey");
-            var character2 = new Character("Eeyore", "thistles", "have a birthday", "losing your tail");
-            var character3 = new Character("Piglet", "haycorns", "hang out with Winnie the Pooh", "just about everything");
-            var character4 = new Character("Tigger", "extract of malt", "bounce", "heights");
-            var character5 = new Character("Rabbit", "carrots", "organize everything", "messy people");
-
+          
       //Function to write text out to the html object
       function writeText(txt, destination) {
       document.getElementById(destination).innerHTML = txt;
@@ -94,8 +73,8 @@
           }
       }
 
-      //script for the left dropdown menu, adapted from w3schools.com
-      /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+      //script for the left dropdown menu (larger screen size), adapted from w3schools.com
+      // When the user clicks on the button, toggle between hiding and showing the dropdown content 
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
         }
@@ -114,19 +93,31 @@
           }
         }
 
+
     </script>
  </head>
 
  <body>
    <div id="container">  
      <header>
+       <div id="who">
        <h1>Who Am I?</h1>
+      </div>
      </header>
      <br>
      
      <div id="left-menu">
-       <p>Left Menu will go here (larger screen size)</p>
-        <!--Left dropdown menu (adapted from w3schools.com)-->
+       <!--Accordion menu with 3 links in 1 panel-->
+          <!--Panel 1 - Home page-->
+        <button class="accordion">Menu</button>
+       <div class="panel">
+        <h3><a class="active" href="indexFinalProject.html">Home</a></h3>
+        <h3><a href="characters.html">The Characters</a></h3>
+        <h3><a href="about.html">About This Site</a></h3>
+        <br>
+       </div>
+
+        <!--Left dropdown menu (adapted from w3schools.com)
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Menu</button>
           <div id="myDropdown" class="dropdown-content">
@@ -134,13 +125,13 @@
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </div>
-        </div>
+        </div>    -->
 
       </div>
 
      <div id="mainContent">
-       <h2 style="text-align:center">Welcome to the Hundred Acre Wood! Are you most like Winnie the Pooh, Eeyore, Piglet, Tigger, or Rabbit?
-         Try it and see!</h2>
+       <h3 style="text-align:center">Welcome to the Hundred Acre Wood! Are you most like Winnie the Pooh, Eeyore, Piglet, Tigger, or Rabbit?
+         Take the quiz to find out!</h3>
        <br>
      
          <!--A form with dropdown selectors for the user to choose character traits (5 characters/options)-->
@@ -184,15 +175,66 @@
           </form>
         </div>
 
-        <br>
+        <!--<br>-->
         <!--This paragraph positions the output text from the user's responses in the form-->
-        <div id="responsesParagraph"> 
+        <div id="outputParagraph"> 
           <p id="formResponses" ></p>
         </div>
 
       </div>
 
-     <div id="bottom-menu">Bottom Menu will go here (for smaller screens)</div>
+     <div id="bottom-menu">
+
+              <!--Bottom? dropdown menu (adapted from w3schools.com)-->
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a class="active" href="indexFinalProject.html">Home</a>
+            <a href="characters.html">The Characters</a>
+            <a href="about.html">About This Site</a>
+          </div>
+        </div>
+
+
+       <!--
+       <button class="accordion">Menu *Change to nav menu like 6207</button>
+       <div class="panel">
+        <h2> <a href="#home">Home</a></h2>
+        <h2><a href="#about">The Characters</a></h2>
+        <h2><a href="#contact">About This Site</a></h2>
+       </div>
+              -->
+      
+      <!--go to a dropdown menu instead
+      Unordered list for the bottom menu
+      <ul>
+        <li><a class="active" href="indexFinalProject.html">Home</a></li>
+        <li><a href="characters.html">The Characters</a></li>
+        <li><a href="about.html">About This Site</a></li>
+      </ul>
+            -->
+
+     </div>
+
+
+
+     <!--//script for the bottom accordion menu (smaller screen size)
+      ***LEARN THIS!!! before presenting this to the class***
+        Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons.
+         The "active" class is used to add a background color to the current button when its belonging panel is open.
+         The "show" class is used to open the specific accordion panel 
+        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
+      <script type = "text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+          }
+        }
+      </script>
 
      <footer>
 		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
