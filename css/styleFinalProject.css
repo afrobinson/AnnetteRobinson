@@ -1,15 +1,18 @@
 ﻿ /* =================================================================
     CSS stylesheet for EME6930 Final Project *one stylesheet for all three pages
-        When display is "none", that div does not appear on that screen size. When display is "block", it is visible.
-    Starting with fonts and colors from Week 10
+    Responsive style for smallest screens starts on line 80
+    Responsive style for medium screens starts on line 364
+    Responsive style for larger screens starts on line 640
     Fonts:
         Headings are Raleway https://www.fontsquirrel.com/fonts/raleway
         Text is Merriweather https://github.com/EbenSorkin/Merriweather 
     Colors:
         Color scheme from https://visme.co/blog/website-color-schemes/ (Natural and Earth)
-        #fbeec1 for background and the form div, #bc986a for button hover, #659dbd for the container div,
-        #8d6141 brown for header, menu buttons, form buttons
-        URL links: white for unclicked link, #8d6141 for visited link NO - dark brown #342309, #bc986a for link hover
+            Pale cream #fbeec1 for page background and the form div
+            Dark cream #bc986a for button hover
+            Light blue #659dbd for elements of the header
+            Warm brown #8d6141 for the header, buttons, and menu buttons
+        URL links: white for unclicked link, dark brown #342309 for visited link, #bc986a for link hover (with a bit of yellow for fun)
     ================================================================= */
 
  body {
@@ -34,27 +37,31 @@
 
  h1 {
 	font-family: "Raleway Bold", arial, sans-serif;
-  text-shadow: 4px 4px #659dbd; /* adds a 4px colored shadow to the text */
-  font-size: 45px;
+    text-shadow: 4px 4px #659dbd; /* adds a 4px colored shadow to the text */
+    font-size: 45px;
     }
 
  h2 {
 	margin-top: 0px;
 	margin-bottom: 0px;	
 	font-family: "Raleway", arial, sans-serif;
-  font-size: 24px;
+    font-size: 24px;
+    text-align: center;
     }
 
   h3 {
     font-family: "Raleway", arial, sans-serif;
     font-size: 20px;
     text-align: left;
+    color: #342309;
+    font-weight: bold;
     padding: 3px;
-  }
+    }
 
  p {
 	font-family: "Merriweather", Helvetica, arial, sans-serif;
 	font-size: 16px;
+    text-align: center;
     }
 
  /* Styling for the URL links */
@@ -74,8 +81,6 @@
     text-decoration: underline;
     }
 
-    
-
  /* ================================================================= 
     This section of css is for smaller screens: Up to 640px wide (designed down to 320px smallest phone size)
     Menu is at the bottom instead of on the left (replacing the footer)
@@ -87,35 +92,32 @@
     /* Styling for the outer container */ 
     #container {
       position: relative;
-      background-color: #659dbd;
+      /*background-color: #659dbd;*/
+      background-image: url("../images/forestPS50.png"); /* semitransparent image replaces background color */
+      background-size: cover; /* image stretches to fill the container, relieves the 'white' space */
       min-height: 1200px;
       width: 95%;
       border-radius: 5px;
       padding: 1%;
       margin: auto;
       display: block;
-    }  
+      }  
 
     header {
       background-image: url("../images/bannerQuestions3.png"); /* my own image created in Photoshop. Font is Papyrus */
       background-size: contain; /* scales the image - displays better for the small screen size */
-      /*background-position: 50% 50%;*/
-      /* height: 10%; */
       width: 100%;
       padding: 1%;
       margin-top: 0%;
       position: relative;
-      /*background-color: #8d6141;*/
       color: white;
       text-align: center;
       border-radius: 5px;
       box-sizing:border-box; /* keeps specified height and width regardless of padding etc. */
       display: block;
-    }
+      }
 
     /* It seems to work better NOT using the #who div on small size screen */
-
-
 
     #left-menu {
       float:left;
@@ -123,34 +125,31 @@
       min-height: 400px;
       padding: 1%;
       box-sizing:border-box;
-      /*border: 1px solid #342309;*/
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
       display: none; /* display:none means this div will not be visible on the smaller screen size.
                         Left menu is replaced with bottom menu for screens under 400px wide */
-    }
+      }
 
-    /* This div will hold an image and a form for user input to see which Winnie the Pooh character they are like */
     #mainContent {
-      /* float:right; (commented out as this is not floating for the smaller screen size) */
-      width:100%; /* full width for the smaller screen size */
+      /* float:right; (commented out as mainContent is full width for the smaller screen size) */
+      width: 100%;
       min-height:850px;
       padding:1%;
       box-sizing:border-box;
-      /*border: 1px solid #342309;*/
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
-      /*font-size: 12px;*/
       display: block;
-    }
+      }
 
-    /* Styling for the form elements */   
+    /* --------------------------------------------
+        Begin styling for form elements (Home page) */   
     #characterForm {
       position: relative;
       width: 75%;
       border-radius: 5px;
       background-color: #fbeec1;
-      padding: 20px;
+      padding: 15px;
       margin: auto;
       font-family: "Merriweather", Helvetica, arial, sans-serif;
       display: block;
@@ -203,37 +202,29 @@
       background-color: #bc986a;
       }
 
-      /* Styling for a div that positions each character */
-      .characters {
-        float: left;
-        width: 18.5%;
-        padding: 1.5px;
-        }
+    /* End styling for form elements (Home page)
+       ----------------------------------------- */ 
+
+    /* Styling for a div that positions each character (Characters page) */
+    .characters {
+      float: left;
+      width: 18.5%;
+      padding: 1.5px;
+      }
       
-      /* responsive class to scale the images (max-width prevents scaling larger than original size) */
-      .responsive {
-        max-width: 100%;
-        height: auto;
+    /* responsive class to scale the character images (max-width prevents scaling larger than original size) */
+    .responsive {
+      max-width: 100%;
+      height: auto;
       }
   
-        /* Styling for the characters div on "The Characters" page
-          *try this differently, use a character div for each character
-      #charactersDiv {
-        width: 100%;
-        padding: 5px;
-      }
-          */
-
     /* Styling for the text output paragraph */ 
     #outputParagraph {
-      /*position: relative;*/
-      width: 85%;
+      width: 90%;
       max-height: 100px;
-      /*border: 2px solid #8d6141;
-      border-radius: 5px;*/
-      background-color: #659dbd;
-      color:darkblue;
-      /*font-size: 14px;*/
+      /*background-color: #659dbd;*/
+      color:white;
+      font-weight: bold;
       padding: 2px;
       margin: 0px auto 0px auto;
       text-align: center;
@@ -242,77 +233,74 @@
       display: block;
       }
 
-      /* here begins styling for the flex box on the About page */
+    /* ---------------------------------------
+       Begin styling for flex box on the About page
+       This is the flex container that holds the links to class assignments */
 
-         /* This is the flex container that holds the links to class assignments */
    .flex-container {
-    width: 90%;
-    height: 70%;
-    margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-around;
-    }
+      width: 90%;
+      height: 70%;
+      margin-top: 20px;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      justify-content: space-around;
+      }
 
   /* This is styling for the child div items (each class assignment link is a child item inside the flex container) */
-  .flex-container div {
-    margin: 8px 0;
-    width: 75px;
-    height: 50px;
-    line-height: 50px;
+   .flex-container div {
+     margin: 8px 0;
+     width: 75px;
+     height: 50px;
+     line-height: 50px;
       /* Vertically align text in the child div by making the line height the same as the div height
          https://stackoverflow.com/questions/6055412/center-text-in-div */
-    margin: 1%;
-    border: 1px solid white;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    color: white;
-    background-color: #8d6141;
-    font-weight: bold;
-    font-size: 14.5px;
-    font-family: "Merriweather", Helvetica, arial, sans-serif;
-    }
+     margin: 1%;
+     border: 1px solid white;
+     border-radius: 4px;
+     box-sizing: border-box;
+     text-align: center;
+     color: white;
+     background-color: #8d6141;
+     font-weight: bold;
+     font-size: 14.5px;
+     font-family: "Merriweather", Helvetica, arial, sans-serif;
+     }
 
   /* These pieces are styling for the child div URL links */
-  .flex-container a {
-    color: white;
-    font-family: "Raleway", arial, sans-serif;
-    }
+   .flex-container a {
+     color: white;
+     font-family: "Raleway", arial, sans-serif;
+     }
   .flex-container div:hover {
     background-color: #bc986a;
     }
-  a.active {
-    background-color: chocolate;
-    font-family: "Raleway Bold", arial, sans-serif;
-    }
 
-      /* here ends styling for the flex box on the About page */
+    /* End styling for flex box on the About page
+       ------------------------------------------ */
 
-      /* here begins styling for the bottom menu options */
+    /* ---------------------------------------
+       Begin styling for the bottom dropdown menu (small size screens only) */
     
     /*  Setting position:absolute and a bottom margin sets this div at the bottom of the container */
     #bottom-menu {
       width:90%;
-      min-height: 200px;
+      min-height: 190px;
       position: absolute;
       padding: 1%;
       left: 5%; /* setting an appropriate left margin to center this div in the container */
       bottom: 5px;
       box-sizing: border-box;
-      /*border: 1px solid #342309;*/
       text-align: left;
       margin: auto;
       font-family: "Raleway", arial, sans-serif;
       display: block;
-    }
+      }
 
-    /* Dropdown menu elements for the BOTTOM menu, adapted from w3schools.com
-        trying this */
+    /* Dropdown menu elements for the BOTTOM menu, adapted from w3schools.com */
         .dropbtn {
           background-color: #8d6141;
           color: white;
@@ -320,82 +308,56 @@
           font-size: 16px;
           border: none;
           cursor: pointer;
-        }
+          }
         
         .dropbtn:hover, .dropbtn:focus {
-          background-color: #2980B9;
-        }
+          background-color: #fbeec1;
+          color: black;
+          }
         
         .dropdown {
           position: relative;
           display: inline-block;
-        }
+          }
         
         .dropdown-content {
           display: none;
           position: absolute;
-          background-color: #f1f1f1;
+          background-color: #8d6141;
           min-width: 160px;
           overflow: auto;
           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
           z-index: 1;
-        }
+          }
         
         .dropdown-content a {
           color: black;
           padding: 12px 16px;
           text-decoration: none;
           display: block;
-        }
+          }
         
-        .dropdown a:hover {background-color: #ddd;}
+        .dropdown a:hover {background-color: #bc986a;}
         
         .show {display: block;}
       
-        /*end of styling for the BOTTOM dropdown menu */
-
-    /* Unordered list for the bottom menu *not using right now */
-    ul {
-		  list-style-type: none;
-		  margin: 0;
-		  padding: 0;
-		  overflow: hidden;
-		}
-		li {
-		  float: left;
-		}
-		li a {
-		  /*display: block;*/
-      display: flex;  
-      flex-wrap: wrap;
-		  color: white;
-		  text-align: center;
-		  padding: 5px;
-		  text-decoration: none;
-		  background-color: #834cb9;
-		}
-		li a:hover:not(.active) {
-		  background-color: #004e9c;
-		}
-		.active {
-		  background-color: #00009c;
-		}
-    /* here ends styling for the bottom menu options */
+    /* End styling for the bottom dropdown menu
+       --------------------------------------- */
 
     footer {
 	  position: absolute;
-     margin: auto;
+      margin: auto;
 	  height: 5%;
 	  width: 100%;
-     padding: 1%;
+      padding: 1%;
 	  color: white;
 	  bottom: 0px;
 	  font-family: "Raleway Bold", Helvetica, sans-serif;
 	  font-size: 14px;
 	  text-align: center;
-     box-sizing:border-box;
-     display: none; /* replacing footer with the bottom menu for the small screen size */
-     }
+      box-sizing:border-box;
+      display: none; /* replacing footer with the bottom menu for the small screen size */
+      }
 }
 
 
@@ -404,12 +366,14 @@
     Menu floats left, main content floats right, some text and elements are smaller
     ================================================================= */
 
-  @media screen and (min-width: 641px) and (max-width: 1007px) {
+@media screen and (min-width: 641px) and (max-width: 1007px) {
 
       /* Styling for the outer container */ 
       #container {
         position: relative;
-        background-color: #659dbd;
+        /*background-color: #659dbd;*/
+        background-image: url("../images/forestPS50.png"); /* semitransparent image replaces background color */
+        background-size: cover; /* image stretches to fill the container, relieves the 'white' space */
         min-height: 1100px;
         width: 95%;
         border-radius: 5px;
@@ -419,8 +383,7 @@
   
       header {
         background-image: url("../images/bannerQuestions3.png"); /* my own image created in Photoshop. Font is Papyrus */
-        /*background-size: contain;*/
-        /*height: 10%;*/
+        /*background-size: contain; (not needed for the medium and larger screen sizes) */
         width: 100%;
         padding: 1%;
         margin-top: 0%;
@@ -433,8 +396,7 @@
         display: block;
         }
   
-      #who {  /* div to keep space between the title and the header background image */
-        /*max-height: 25%;*/
+      #who {  /* div to keep space between the title and the header background image, for medium and larger screens */
         max-width: 30%;
         margin: 1px auto;
         padding: 1px;
@@ -442,64 +404,23 @@
         left: 35%;
         }
   
-  
-      #left-menu {
+      #left-menu {  /* left menu for medium and larger screen sizes that can display 2 columns */
         float:left;
         width:22%;
         min-height: 400px;
         padding: 1%;
         box-sizing:border-box; 
-        /*border: 1px solid #342309;*/
         font-family: "Raleway", arial, sans-serif;
         text-align: center;
         display: block;
         }
   
-      /* Dropdown menu elements for the left menu, adapted from w3schools.com
-          might not be using this. Trying accordion style/script for the left menu */
-      .dropbtn {
-        background-color: #8d6141;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-      }
-      .dropbtn:hover, .dropbtn:focus {
-        background-color: #2980B9;
-      }
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      .dropdown a:hover {background-color: #ddd;}
-      .show {display: block;}
-      /*end of styling for the left dropdown menu */
-  
       /* -------------------------------------------
-         Styling for the accordion pieces for the left menu (large screen size only) */
-          /* Accordion styling - Does this work at the top, outside the screen sizing? NO, text is not responsive */
+         Begin styling for the accordion pieces for the left menu (medium and larger screen sizes only) */
   
-      /* Accordion button to open the bottom menu (bottom menu only)
-          OR trying this for the left menu for bigger screen size */
           button.accordion {
             background-color: #8d6141;
-            color: #00000f;
+            color: white;
             cursor: pointer;
             padding: 18px;
             width: 100%;
@@ -510,11 +431,13 @@
             font-family: "Raleway", arial, sans-serif;
             font-size: 20px;
             font-weight: bold;
-          }
+            }
+          
           button.accordion.active, button.accordion:hover {
             background-color: #fbeec1;
-          }
-          /* Panel for the accordion menu (bottom menu and/or left menu - using for both right now) */
+            color: black;
+            }
+          /* Panel for the accordion menu */
           .panel {
             padding: 0 5px;
             background-color: #8d6141;
@@ -524,27 +447,31 @@
             transition: 0.6s ease-in-out;
             opacity: 0;
             font-family: "Raleway", arial, sans-serif;
-          }
+            }
+
           .panel.show {
             opacity: 1;
             max-height: 250px; /* Keep this more than the height of the content */
             font-size: 16px;
-          }
-          /*end of styling for the accordion pieces
-          ------------------------------------------- */
+            color: white;
+            }
+
+          /* End styling for the accordion pieces
+             -------------------------------------- */
   
       #mainContent {
-        float:right;
-        width:75%;
-        min-height:900px;
-        padding:1%;
-        /*border: 1px solid #342309;*/
+        float: right; /* right hand column for medium and large screens */
+        width: 75%;
+        min-height: 900px;
+        padding: 1%;
         font-family: "Raleway", arial, sans-serif;
         text-align: center;
         display: block;
         }
   
-      /* Styling for the form elements */   
+    /* --------------------------------------------
+        Begin styling for form elements (Home page) */  
+
       #characterForm {
         position: relative;
         width: 65%;
@@ -603,34 +530,27 @@
         background-color: #bc986a;
         }
   
-        /* Styling for a div that positions each character */
+        /* End styling for form elements (Home page)
+           ----------------------------------------- */ 
+
+    /* Styling for a div that positions each character (Characters page) */
       .characters {
         float: left;
         width: 19%;
         padding: 2px;
         }
   
-        /* responsive class to scale the images (max-width prevents scaling larger than original size) */
+        /* responsive class to scale the character images (max-width prevents scaling larger than original size) */
         .responsive {
           max-width: 100%;
           height: auto;
-        }
-  
-        /* Styling for the characters div on "The Characters" page
-          *try this differently, use a character div for each character
-      #charactersDiv {
-        width: 100%;
-        padding: 5px;
-      }
-          */
+          }
   
       /* Styling for the text output paragraph */ 
       #outputParagraph {
         width: 75%;
-        /*border: 2px solid #8d6141;
-        border-radius: 5px;*/
-        background-color: #659dbd;
-        color:darkblue;
+        color:white;
+        font-weight: bold;
         padding: 2px;
         margin: 0px auto 0px auto;
         text-align: center;
@@ -640,21 +560,22 @@
         display: block;
         }
   
-        /* here begins styling for the flex box on the About page */
+    /* ---------------------------------------
+       Begin styling for flex box on the About page
+       This is the flex container that holds the links to class assignments */
   
-           /* This is the flex container that holds the links to class assignments */
-           .flex-container {
-            width: 80%;
-            height: 70%;
-            margin-top: 20px;
-            margin-right: auto;
-            margin-left: auto;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            justify-content: space-around;
-            }
+        .flex-container {
+          width: 80%;
+          height: 70%;
+          margin-top: 20px;
+          margin-right: auto;
+          margin-left: auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          justify-content: space-around;
+          }
         
           /* This is styling for the child div items (each class assignment link is a child item inside the flex container) */
           .flex-container div {
@@ -684,12 +605,9 @@
           .flex-container div:hover {
             background-color: #bc986a;
             }
-          .flex-container a.active {
-            background-color: chocolate;
-            font-family: "Raleway Bold", arial, sans-serif;
-            }
-        
-              /* here ends styling for the flex box on the About page */
+            
+    /* End styling for flex box on the About page
+       ------------------------------------------ */
         
               #bottom-menu {
                 width:90%;
@@ -706,7 +624,7 @@
                 display: none; /* bottom menu is replaced with left menu for the larger screen size */
                 }
   
-      footer {
+    footer {
       position: absolute;
       margin: auto;
       height: 5%;
@@ -721,7 +639,7 @@
       display:block;
       }
   
-  }
+}
 
 
  /* =================================================================
@@ -734,7 +652,9 @@
     /* Styling for the outer container */ 
     #container {
       position: relative;
-      background-color: #659dbd;
+      /*background-color: #659dbd;*/
+      background-image: url("../images/forestPS50.png"); /* semitransparent image replaces background color */
+      background-size: cover; /* image stretches to fill the container, relieves the 'white' space */
       min-height: 1100px;
       width: 95%;
       border-radius: 5px;
@@ -744,8 +664,7 @@
 
     header {
       background-image: url("../images/bannerQuestions3.png"); /* my own image created in Photoshop. Font is Papyrus */
-      /*background-size: contain;*/
-      /*height: 10%;*/
+      /*background-size: contain; (not needed for the medium and larger screen sizes) */
       width: 100%;
       padding: 1%;
       margin-top: 0%;
@@ -758,8 +677,7 @@
       display: block;
       }
 
-    #who {  /* div to keep space between the title and the header background image */
-      /*max-height: 25%;*/
+    #who {  /* div to keep space between the title and the header background image, for medium and larger screens */
       max-width: 30%;
       margin: 1px auto;
       padding: 1px;
@@ -767,66 +685,23 @@
       left: 35%;
       }
 
-
     #left-menu {
       float:left;
       width:20%;
       min-height: 400px;
       padding: 1%;
       box-sizing:border-box; 
-      /*border: 1px solid #342309;*/
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
       display: block;
       }
 
-    /* ------------------------------------
-     Dropdown menu elements for the left menu, adapted from w3schools.com
-        might not be using this. Trying accordion style/script for the left menu */
-    .dropbtn {
-      background-color: #8d6141;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-    .dropbtn:hover, .dropbtn:focus {
-      background-color: #2980B9;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      overflow: auto;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown a:hover {background-color: #ddd;}
-    .show {display: block;}
-    /*end of styling for the left dropdown menu
-      ----------------------------------------- */
+      /* -------------------------------------------
+         Begin styling for the accordion pieces for the left menu (medium and larger screen sizes only) */
 
-    /* -------------------------------------------
-       Styling for the accordion pieces for the left menu (large screen size only) */
-        /* Accordion styling - Does this work at the top, outside the screen sizing? NO, text is not responsive */
-
-    /* Accordion button to open the bottom menu (bottom menu only)
-        OR trying this for the left menu for bigger screen size */
         button.accordion {
           background-color: #8d6141;
-          color: #00000f;
+          color: white;
           cursor: pointer;
           padding: 18px;
           width: 100%;
@@ -840,8 +715,9 @@
         }
         button.accordion.active, button.accordion:hover {
           background-color: #fbeec1;
+          color: black;
         }
-        /* Panel for the accordion menu (bottom menu and/or left menu - using for both right now) */
+        /* Panel for the accordion menu */
         .panel {
           padding: 0 5px;
           background-color: #8d6141;
@@ -858,21 +734,23 @@
           max-height: 250px; /* Keep this more than the height of the content */
           font-size: 20px;
         }
-        /*end of styling for the accordion pieces
-        ------------------------------------------- */
+
+          /* End styling for the accordion pieces
+             -------------------------------------- */
 
     #mainContent {
-      float:right;
-      width:75%;
-      min-height:900px;
-      padding:1%;
-      /*border: 1px solid #342309;*/
+      float: right; /* right hand column for medium and large screens */
+      width: 75%;
+      min-height: 900px;
+      padding: 1%;
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
       display: block;
       }
 
-    /* Styling for the form elements */   
+    /* --------------------------------------------
+        Begin styling for form elements (Home page) */  
+
     #characterForm {
       position: relative;
       width: 60%;
@@ -931,93 +809,83 @@
       background-color: #bc986a;
       }
 
-      /* Styling for a div that positions each character */
+    /* End styling for form elements (Home page)
+       ----------------------------------------- */ 
+
+    /* Styling for a div that positions each character (Characters page) */
     .characters {
       float: left;
       width: 19%;
       padding: 3px;
       }
 
-      /* responsive class to scale the images (max-width prevents scaling larger than original size) */
+      /* responsive class to scale the character images (max-width prevents scaling larger than original size) */
       .responsive {
         max-width: 100%;
         height: auto;
       }
 
-      /* Styling for the characters div on "The Characters" page
-        *try this differently, use a character div for each character
-    #charactersDiv {
-      width: 100%;
-      padding: 5px;
-    }
-        */
-
     /* Styling for the text output paragraph */ 
     #outputParagraph {
       width: 75%;
-      /*border: 2px solid #8d6141;
-      border-radius: 5px;*/
-      background-color: #659dbd;
-      color:darkblue;
+      color:white;
+      font-weight: bold;
       padding: 2px;
       margin: 0px auto 0px auto;
       text-align: center;
       font-weight: bold;
-      /*font-size: 30px;*/
       /* overflow: scroll; (in case needed) */
       display: block;
       }
 
-      /* here begins styling for the flex box on the About page */
+    /* ---------------------------------------
+       Begin styling for flex box on the About page
+       This is the flex container that holds the links to class assignments */
 
-         /* This is the flex container that holds the links to class assignments */
-         .flex-container {
-          width: 80%;
-          height: 70%;
-          margin-top: 20px;
-          margin-right: auto;
-          margin-left: auto;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: center;
-          justify-content: space-around;
-          }
+    .flex-container {
+      width: 80%;
+      height: 70%;
+      margin-top: 20px;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      justify-content: space-around;
+      }
       
-        /* This is styling for the child div items (each class assignment link is a child item inside the flex container) */
-        .flex-container div {
-          margin: 8px 0;
-          width: 75px;
-          height: 50px;
-          line-height: 50px;
+    /* This is styling for the child div items (each class assignment link is a child item inside the flex container) */
+      .flex-container div {
+        margin: 8px 0;
+        width: 75px;
+        height: 50px;
+        line-height: 50px;
             /* Vertically align text in the child div by making the line height the same as the div height
                https://stackoverflow.com/questions/6055412/center-text-in-div */
-          margin: 1%;
-          border: 1px solid white;
-          border-radius: 4px;
-          box-sizing: border-box;
-          text-align: center;
-          color: white;
-          background-color: #8d6141;
-          font-weight: bold;
-          font-size: 14.5px;
-          font-family: "Merriweather", Helvetica, arial, sans-serif;
-          }
+        margin: 1%;
+        border: 1px solid white;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+        color: white;
+        background-color: #8d6141;
+        font-weight: bold;
+        font-size: 14.5px;
+        font-family: "Merriweather", Helvetica, arial, sans-serif;
+        }
       
-        /* These pieces are styling for the child div URL links */
-        .flex-container a {
-          color: white;
-          font-family: "Raleway", arial, sans-serif;
-          }
-        .flex-container div:hover {
-          background-color: #bc986a;
-          }
-        .flex-container a.active {
-          background-color: chocolate;
-          font-family: "Raleway Bold", arial, sans-serif;
-          }
-      
-            /* here ends styling for the flex box on the About page */
+    /* These pieces are styling for the child div URL links */
+      .flex-container a {
+        color: white;
+        font-family: "Raleway", arial, sans-serif;
+        }
+      .flex-container div:hover {
+        background-color: #bc986a;
+        }
+   
+    /* End styling for flex box on the About page
+       ------------------------------------------ */
       
             #bottom-menu {
               width:90%;
@@ -1036,17 +904,17 @@
 
     footer {
 	  position: absolute;
-    margin: auto;
+      margin: auto;
 	  height: 5%;
 	  width: 100%;
-    padding: 1%;
-    box-sizing:border-box;
+      padding: 1%;
+      box-sizing:border-box;
 	  color: white;
 	  bottom: 0px;
 	  font-family: "Raleway Bold", Helvetica, sans-serif;
 	  font-size: 16px;
 	  text-align: center;
-    display:block;
+      display:block;
     }
 
 }

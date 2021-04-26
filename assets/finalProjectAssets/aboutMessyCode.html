@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Annette Robinson's Final Project (EME 6930)</title>
+   <link rel="stylesheet" type="text/css" href="css/styleFinalProject.css">
+    <script type = "text/javascript">
+
+
+      //Function to write text out to the html object. PROBABLY DON'T  NEED ON THIS PAGE
+      function writeText(txt, destination) {
+      document.getElementById(destination).innerHTML = txt;
+        }
+
+      
+      //script for the left dropdown menu (larger screen size), adapted from w3schools.com
+      // When the user clicks on the button, toggle between hiding and showing the dropdown content 
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+
+
+    </script>
+ </head>
+
+ <body>
+   <div id="container">  
+     <header>
+       <div id="who">
+       <h1>Who Am I?</h1>
+      </div>
+     </header>
+     <br>
+     
+     <div id="left-menu">
+       <!--Accordion menu with 3 links in 1 panel-->
+          <!--Panel 1 - Home page-->
+        <button class="accordion">Menu</button>
+       <div class="panel">
+        <h3><a href="indexFinalProject.html">Home</a></h3>
+        <h3><a href="characters.html">The Characters</a></h3>
+        <h3><a class="active" href="about.html">About This Site</a></h3>
+        <br>
+       </div>
+
+        <!--Left dropdown menu (adapted from w3schools.com)
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>    -->
+
+      </div>
+
+     <div id="mainContent">
+       <h2 style="text-align:center">About This Website</h2>
+       <p align=center>And - who am <strong>I</strong> ?! When I'm not Piglet or Rabbit, I'm Annette Robinson...</p> 
+       <p align="center"><img src="images/annette.png" style="border: 2px solid #342309; border-radius: 30%; height: 200px;" alt="Photo of Annette Robinson"/></p>
+       <p align="center">...a student in the <a href="https://www.usf.edu/education/areas-of-study/instructional-technology/learning-design-and-technology/index.aspx" target="_blank">Learning Design and Technology</a> program at the University of South Florida.</p>
+       <p align="center">This website is the final project for Dr. Glenn Smith's EME 6930 Web Programming I class.</p>
+       <p align="center">Here are links to other assignments in the class.</p>
+
+       <div class="flex-container">
+         <div><a href="indexWeek0.html" target="_blank">Week 0</a></div>
+         <div><a href="indexWeek1.html" target="_blank">Week 1</a></div>
+         <div><a href="indexWeek2.html" target="_blank">Week 2</a></div>
+         <div><a href="indexWeek3.html" target="_blank">Week 3</a></div>
+         <div><a href="indexWeek4.html" target="_blank">Week 4</a></div>
+         <div><a href="indexWeek5.html" target="_blank">Week 5</a></div>
+         <div><a href="indexWeek6.html" target="_blank">Week 6</a></div>
+         <div><a href="indexWeek7.html" target="_blank">Week 7</a></div>
+         <div><a href="indexWeek8.html" target="_blank">Week 8</a></div>
+         <div><a href="indexWeek9.html" target="_blank">Week 9</a></div>
+         <div><a href="indexWeek10.html" target="_blank">Week 10</a></div>
+         <div><a class="active" href="indexFinalProject.html" target="_blank">Final</a></div>
+         <div><a href="indexExtra1.html" target="_blank">Extra 1</a></div>
+         <div><a href="indexExtra2.html" target="_blank">Extra 2</a></div>
+       </div>
+
+           <!--<br>-->
+        <!--This paragraph positions the output text when the user clicks a character's image above
+            PROBABLY DON'T NEED IT ON THIS PAGE-->
+        <div id="outputParagraph"> 
+          <p id="character"></p>
+        </div>
+
+      </div>
+
+     <div id="bottom-menu">
+
+              <!--Bottom? dropdown menu (adapted from w3schools.com)-->
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="indexFinalProject.html">Home</a>
+            <a href="characters.html">The Characters</a>
+            <a class="active" href="about.html">About This Site</a>
+          </div>
+        </div>
+
+
+       <!--
+       <button class="accordion">Menu *Change to nav menu like 6207</button>
+       <div class="panel">
+        <h2> <a href="#home">Home</a></h2>
+        <h2><a href="#about">The Characters</a></h2>
+        <h2><a href="#contact">About This Site</a></h2>
+       </div>
+              -->
+      
+      <!--go to a dropdown menu instead
+      Unordered list for the bottom menu
+      <ul>
+        <li><a class="active" href="indexFinalProject.html">Home</a></li>
+        <li><a href="characters.html">The Characters</a></li>
+        <li><a href="about.html">About This Site</a></li>
+      </ul>
+            -->
+
+     </div>
+
+
+
+     <!--//script for the bottom accordion menu (smaller screen size)
+      ***LEARN THIS!!! before presenting this to the class***
+        Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons.
+         The "active" class is used to add a background color to the current button when its belonging panel is open.
+         The "show" class is used to open the specific accordion panel 
+        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
+      <script type = "text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+          }
+        }
+      </script>
+
+     <footer>
+		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
+     </footer>
+
+   </div>
+ 
+  </body>
+</html>

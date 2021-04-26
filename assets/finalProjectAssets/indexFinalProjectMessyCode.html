@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--Home Page
-    All 3 pages have:
-        Left accordion menu with javascript for medium and small screens
-        Bottom dropdown menu with javascript for smallest screens
-        Header with a responsive background for smallest screens
-    Home page has a form; user input feeds into If/Else If/Else arguments that classify it and write the results to an output paragraph-->
-
  <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Annette Robinson's Final Project (EME 6930)</title>
    <link rel="stylesheet" type="text/css" href="css/styleFinalProject.css">
     <script type = "text/javascript">
+
           
       //Function to write text out to the html object
       function writeText(txt, destination) {
@@ -79,7 +73,7 @@
           }
       }
 
-      //script for the bottom dropdown menu (smallest screens), adapted from w3schools.com
+      //script for the left dropdown menu (larger screen size), adapted from w3schools.com
       // When the user clicks on the button, toggle between hiding and showing the dropdown content 
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -99,6 +93,7 @@
           }
         }
 
+
     </script>
  </head>
 
@@ -112,8 +107,8 @@
      <!--<br>-->
      
      <div id="left-menu">
-       <!--Accordion menu with 3 links in 1 panel. Medium and large screens only
-             *Javascript immediately below-->
+       <!--Accordion menu with 3 links in 1 panel-->
+          <!--Panel 1 - Home page-->
         <button class="accordion">Menu</button>
        <div class="panel">
         <h3><a class="active" href="indexFinalProject.html">Home</a></h3>
@@ -122,27 +117,19 @@
         <br>
        </div>
 
+        <!--Left dropdown menu (adapted from w3schools.com)
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>    -->
+
       </div>
 
-        <!--Script for the left accordion menu (medium and larger screen size)
-        Toggle between adding and removing the "active" and "show" classes when the user clicks on the accordion menu button.
-         The "active" class is used to add a background color to the current button when its belonging panel is open.
-         The "show" class is used to open the specific accordion panel (in this case, only one panel)
-        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
-        <script type = "text/javascript">
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-    
-            for (i = 0; i < acc.length; i++) {
-              acc[i].onclick = function(){
-                this.classList.toggle("active");
-                this.nextElementSibling.classList.toggle("show");
-              }
-            }
-          </script>
-
      <div id="mainContent">
-
        <h3 style="text-align:center">Welcome to the Hundred Acre Wood! Are you most like Winnie the Pooh, Eeyore, Piglet, Tigger, or Rabbit?
          Take the quiz to find out!</h3>
      
@@ -187,6 +174,7 @@
           </form>
         </div>
 
+        <!--<br>-->
         <!--This paragraph positions the output text from the user's responses in the form-->
         <div id="outputParagraph"> 
           <p id="formResponses" ></p>
@@ -196,7 +184,7 @@
 
      <div id="bottom-menu">
 
-        <!--Placement of the bottom dropdown menu (javascript is in the head)-->
+              <!--Bottom? dropdown menu (adapted from w3schools.com)-->
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Menu</button>
           <div id="myDropdown" class="dropdown-content">
@@ -206,7 +194,46 @@
           </div>
         </div>
 
+
+       <!--
+       <button class="accordion">Menu *Change to nav menu like 6207</button>
+       <div class="panel">
+        <h2> <a href="#home">Home</a></h2>
+        <h2><a href="#about">The Characters</a></h2>
+        <h2><a href="#contact">About This Site</a></h2>
+       </div>
+              -->
+      
+      <!--go to a dropdown menu instead
+      Unordered list for the bottom menu
+      <ul>
+        <li><a class="active" href="indexFinalProject.html">Home</a></li>
+        <li><a href="characters.html">The Characters</a></li>
+        <li><a href="about.html">About This Site</a></li>
+      </ul>
+            -->
+
      </div>
+
+
+
+     <!--//script for the bottom accordion menu (smaller screen size)
+      ***LEARN THIS!!! before presenting this to the class***
+        Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons.
+         The "active" class is used to add a background color to the current button when its belonging panel is open.
+         The "show" class is used to open the specific accordion panel 
+        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
+      <script type = "text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+          }
+        }
+      </script>
 
      <footer>
 		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>

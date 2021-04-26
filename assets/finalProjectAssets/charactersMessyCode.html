@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--Characters Page
-    All 3 pages have:
-        Left accordion menu with javascript for medium and small screens
-        Bottom dropdown menu with javascript for smallest screens
-        Header with a responsive background for smallest screens
-    Characters page uses a constructor function to create the 5 characters, with an onclick event handler on each character's image
-        that calls out the descriptive text string for each character and writes the results to an output paragraph
-        An additional event handler on the character images calls out a function to play audio for that character
-        One click activates both event handlers-->
-
  <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +49,7 @@
           player.play();
         }
 
-      //script for the bottom dropdown menu (smallest screens), adapted from w3schools.com
+      //script for the left dropdown menu (larger screen size), adapted from w3schools.com
       // When the user clicks on the button, toggle between hiding and showing the dropdown content 
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -93,8 +83,8 @@
      <br>
      
      <div id="left-menu">
-       <!--Accordion menu with 3 links in 1 panel. Medium and large screens only
-             *Javascript immediately below-->
+       <!--Accordion menu with 3 links in 1 panel-->
+          <!--Panel 1 - Home page-->
         <button class="accordion">Menu</button>
        <div class="panel">
         <h3><a href="indexFinalProject.html">Home</a></h3>
@@ -103,59 +93,78 @@
         <br>
        </div>
 
+        <!--Left dropdown menu (adapted from w3schools.com)
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>    -->
+
       </div>
 
-        <!--Script for the left accordion menu (medium and larger screen size)
-        Toggle between adding and removing the "active" and "show" classes when the user clicks on the accordion menu button.
-         The "active" class is used to add a background color to the current button when its belonging panel is open.
-         The "show" class is used to open the specific accordion panel (in this case, only one panel)
-        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
-        <script type = "text/javascript">
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-    
-            for (i = 0; i < acc.length; i++) {
-              acc[i].onclick = function(){
-                this.classList.toggle("active");
-                this.nextElementSibling.classList.toggle("show");
-              }
-            }
-          </script>
-
      <div id="mainContent">
-         
        <h2 style="text-align:center">The Characters</h2>
        <br>
        <p>All the characters who live in the Hundred Acre Wood can be found in the 
          <a href="https://www.amazon.com/A.-A.-Milne/e/B000AP7ID2%3Fref=dbs_a_mng_rwt_scns_share" target="_blank">Winnie the Pooh books by A.A. Milne.</a></p> 
        <p>Click or tap your favorite!</p>
 
-        <!--Images are responsive per screen size.
-            Onclick event handler plays a sound and writes a description for each character-->
+        <!--Images are responsive. Onclick event handler plays a sound and writes a description for each character-->
 
        	<!--Winnie the Pooh from https://www.disneyclips.com/images/images/winnie-the-pooh-honey.png-->
-		<div class="characters">
+				<div class="characters">
           <input type = "image" src="images/winnie.png" class="responsive" onclick= "play('audio/poohRumbly.wav'); character1.writeCharacter();">
-            </div>
+        </div>
         <!--Piglet from https://3.bp.blogspot.com/-VeG0pJ_kIno/T8-SeE28xNI/AAAAAAAAGqI/cRtEuuNcOGU/s1600/free_walt_disney_piglet_wallpaper.png-->
-		<div class="characters">
+				<div class="characters">
           <input type = "image" src="images/piglet.png" class="responsive" onclick = "play('audio/piglet1.wav'); character3.writeCharacter();">
-            </div>
+          </div>
         <!--Eeyore from https://www.disneyclips.com/images/images/eeyore25.png-->
-		<div class="characters">
+				<div class="characters">
           <input type="image" src="images/eeyore2.png" class="responsive" onclick="play('audio/eeyore.wav'); character2.writeCharacter();">
-            </div>
+          </div>
         <!--Tigger from https://www.disneyclips.com/images/images/tigger33.png-->
-		<div class="characters">
+				<div class="characters">
           <input type="image" src="images/tigger.png" class="responsive" onclick="play('audio/tigger.wav'); character4.writeCharacter();">
-            </div>
+          </div>
         <!--Rabbit from https://www.disneyclips.com/images3/images/rabbit.png-->
-		<div class="characters">
+				<div class="characters">
           <input type="image" src="images/rabbit.png" class="responsive" onclick="play('audio/poohOnRabbit.wav'); character5.writeCharacter();">
-            </div>
+          </div>
+
+        <!--Each image below has an event handler that outputs text from its character (constructor) to the outputParagraph-->
+        <!--trying instead each character in a styled div
+       	<!--Winnie the Pooh from https://www.disneyclips.com/images/images/winnie-the-pooh-honey.png
+				<div style="float: left; padding: 15px;">
+          <input type = "image" src="images/winnie.png" style="height: 160px;" onclick= "character1.writeCharacter();">
+        </div>
+        <!--Piglet from https://3.bp.blogspot.com/-VeG0pJ_kIno/T8-SeE28xNI/AAAAAAAAGqI/cRtEuuNcOGU/s1600/free_walt_disney_piglet_wallpaper.png
+          <div style="float: left; padding: 15px;">
+          <input type = "image" src="images/piglet.png" style="height: 160px;" onclick = "character3.writeCharacter();">
+          </div>
+        <!--Eeyore from https://www.disneyclips.com/images/images/eeyore25.png
+          <div style="float: left; padding: 15px;">
+          <input type="image" src="images/eeyore2.png" style="height: 160px;" onclick="character2.writeCharacter();">
+          </div>
+        <!--Tigger from https://www.disneyclips.com/images/images/tigger33.png
+          <div style="float: left; padding: 15px;">
+          <input type="image" src="images/tigger.png" style="height: 160px;" onclick="character4.writeCharacter();">
+          </div>
+        <!--Rabbit from https://www.disneyclips.com/images3/images/rabbit.png
+        <div style="float: left; padding: 15px;">
+          <input type="image" src="images/rabbit.png" style="height: 160px;" onclick="character5.writeCharacter();">
+          </div>
+        -->
+
+        <!--</div>-->
 
         <br><br><br><br><br>
 
+        <!--Adjust the text and include a link to a web page on each character-->
+           <!--<br>-->
         <!--This paragraph positions the output text when the user clicks a character's image above-->
         <div id="outputParagraph"> 
           <p id="character"></p>
@@ -165,7 +174,7 @@
 
      <div id="bottom-menu">
 
-        <!--Placement of the bottom dropdown menu (javascript is in the head)-->
+              <!--Bottom? dropdown menu (adapted from w3schools.com)-->
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Menu</button>
           <div id="myDropdown" class="dropdown-content">
@@ -175,7 +184,46 @@
           </div>
         </div>
 
+
+       <!--
+       <button class="accordion">Menu *Change to nav menu like 6207</button>
+       <div class="panel">
+        <h2> <a href="#home">Home</a></h2>
+        <h2><a href="#about">The Characters</a></h2>
+        <h2><a href="#contact">About This Site</a></h2>
        </div>
+              -->
+      
+      <!--go to a dropdown menu instead
+      Unordered list for the bottom menu
+      <ul>
+        <li><a class="active" href="indexFinalProject.html">Home</a></li>
+        <li><a href="characters.html">The Characters</a></li>
+        <li><a href="about.html">About This Site</a></li>
+      </ul>
+            -->
+
+     </div>
+
+
+
+     <!--//script for the bottom accordion menu (smaller screen size)
+      ***LEARN THIS!!! before presenting this to the class***
+        Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons.
+         The "active" class is used to add a background color to the current button when its belonging panel is open.
+         The "show" class is used to open the specific accordion panel 
+        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
+      <script type = "text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+          }
+        }
+      </script>
 
      <footer>
 		  Copyright 2021, <a href="https://www.linkedin.com/in/annettefaithrobinson" target="_blank">Annette Robinson</a>
