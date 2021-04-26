@@ -95,7 +95,7 @@
       /*background-color: #659dbd;*/
       background-image: url("../images/forestPS50.png"); /* semitransparent image replaces background color */
       background-size: cover; /* image stretches to fill the container, relieves the 'white' space */
-      min-height: 1200px;
+      min-height: 1225px;
       width: 95%;
       border-radius: 5px;
       padding: 1%;
