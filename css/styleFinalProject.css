@@ -134,7 +134,7 @@
     #mainContent {
       /* float:right; (commented out as mainContent is full width for the smaller screen size) */
       width: 100%;
-      min-height:850px;
+      min-height:875px;
       padding:1%;
       box-sizing:border-box;
       font-family: "Raleway", arial, sans-serif;
