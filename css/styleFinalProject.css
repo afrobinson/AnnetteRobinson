@@ -1,8 +1,8 @@
 ﻿ /* =================================================================
     CSS stylesheet for EME6930 Final Project *one stylesheet for all three pages
-    Responsive style for smallest screens starts on line 111
-    Responsive style for medium screens starts on line 407
-    Responsive style for larger screens starts on line 697
+    Responsive style for smallest screens starts on line 112
+    Responsive style for medium screens starts on line 420
+    Responsive style for larger screens starts on line 722
     Fonts:
         Headings are Raleway https://www.fontsquirrel.com/fonts/raleway
         Text is Merriweather https://github.com/EbenSorkin/Merriweather 
@@ -260,7 +260,19 @@
       display: block;
       }
 
-    /* ---------------------------------------
+    #formResponses {
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      }
+
+    #characterOutput {
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      }
+
+      /* ---------------------------------------
        Begin styling for flex box on the About page
        This is the flex container that holds the links to class assignments */
 
@@ -602,6 +614,18 @@
         /* overflow: scroll; (in case needed) */
         display: block;
         }
+
+      #formResponses {
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        }
+
+      #characterOutput {
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        }
   
     /* ---------------------------------------
        Begin styling for flex box on the About page
@@ -889,6 +913,18 @@
       font-weight: bold;
       /* overflow: scroll; (in case needed) */
       display: block;
+      }
+
+    #formResponses {
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      }
+
+    #characterOutput {
+      color: white;
+      font-weight: bold;
+      text-align: center;
       }
 
     /* ---------------------------------------
