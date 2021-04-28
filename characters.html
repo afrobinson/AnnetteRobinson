@@ -18,15 +18,16 @@
    <link rel="stylesheet" type="text/css" href="css/styleFinalProject.css">
     <script type = "text/javascript">
 
-          //Constructor function for the characters
-          //Event handlers on an image for each character
+          //Constructor function for the characters, with four properties: name, food, action, fear
             function Character (name, food, action, fear) {
             this.name = name;
             this.food = food;
             this.action = action;
             this.fear = fear;
 
-            //Function to define a string for the text that will be output from the parameters above
+            /*Function/method to define a string for the text that will be output from the parameters/properties above.
+              The writeCharacter function is called out by the onclick event handlers assigned to each character 
+              in the html below (lines 139-158) */
             this.writeCharacter = function() {
                 var str = "I am " + this.name + "! My favorite food is " + this.food + ", my favorite thing to do is " + this.action
                           + ", and what I most fear is " + this.fear + ".";
@@ -34,7 +35,8 @@
                 }
               };
 
-            //Variables creating objects by calling the "Character" constructor function from above with the "new" keyword
+            /* Variables assigning 5 characters (objects) by calling the "Character" constructor function from above with the "new" keyword.
+               Each character has a string literal for each of the four properties - name, food, action, fear */
             var character1 = new Character("Winnie the Pooh", "honey", "eat honey", "running out of honey");
             var character2 = new Character("Eeyore", "thistles", "have a birthday", "losing my tail");
             var character3 = new Character("Piglet", "haycorns", "hang out with Winnie the Pooh", "-just about everything!");
@@ -52,20 +54,27 @@
         /* a global array of sounds for the characters (from https://hostbebe.tripod.com/Sounds.html and https://www.angelfire.com/me2/pooh2/sounds.html) */
         var sounds = ["audio/poohRumbly.wav", "audio/eeyore.wav", "audio/piglet1.wav", "audio/tigger.wav", "audio/poohOnRabbit.wav"];
 
-        //function to load and play sound where s is name of mp3 or wav file
+        /*function to load and play sound where s is name of mp3 or wav file. This function is called out by the onclick event handlers
+          assigned to each character in the html below (lines 139-158) */
         function play(s) {
           player.src = s;
           player.load();
           player.play();
         }
 
-      //script for the bottom dropdown menu (smallest screens), adapted from w3schools.com
-      // When the user clicks on the button, toggle between hiding and showing the dropdown content 
+      /* Script for the bottom dropdown menu (smallest screens), adapted from w3schools.com
+         The myFunction function is called out by the onlick event handler line 202 (the Menu drop button) 
+         When the user clicks on the button, toggle between hiding and showing the dropdown content in the 
+         "myDropdown" div (see html below) */
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Close the dropdown if the user clicks outside of it
+        /* Close the dropdown if the user clicks outside of it
+            - defines a window onclick function with a property called 'event'.
+            If the event target (where the mouse is clicked) does not (signified by logical operator !) match the css 'dropbtn' class,
+             then - where dropdowns is declared as accessing the dropdown-content, a for loop is executed to remove the dropdown 'show' class
+              - that is, not to show the dropdown-content */
         window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
           var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -78,7 +87,6 @@
             }
           }
         }
-
 
     </script>
  </head>
@@ -100,6 +108,7 @@
         <h3><a href="indexFinalProject.html">Home</a></h3>
         <h3><a class="active" href="characters.html">The Characters</a></h3>
         <h3><a href="about.html">About This Site</a></h3>
+        <h3><a href="resources.html">Resources</a></h3>
         <br>
        </div>
 
@@ -109,7 +118,8 @@
         Toggle between adding and removing the "active" and "show" classes when the user clicks on the accordion menu button.
          The "active" class is used to add a background color to the current button when its belonging panel is open.
          The "show" class is used to open the specific accordion panel (in this case, only one panel)
-        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
+          - so, is the for loop needed when there are not multiple panels to loop through?
+          (and a comment re. positioning - the accordion button above only seems to work when positioned ABOVE the script) -->
         <script type = "text/javascript">
             var acc = document.getElementsByClassName("accordion");
             var i;
@@ -131,7 +141,9 @@
        <h3>Click or tap your favorite!</h3>
 
         <!--Images are responsive per screen size.
-            Onclick event handler plays a sound and writes a description for each character-->
+            Onclick event handler initiates two events:
+             - calls out the play(s) function to play an audio clip for the character
+             - calls out the writeCharacter function to write out a description for each character object with its four properties-->
 
        	<!--Winnie the Pooh from https://www.disneyclips.com/images/images/winnie-the-pooh-honey.png-->
 		<div class="characters">
@@ -165,13 +177,15 @@
 
      <div id="bottom-menu">
 
-        <!--Placement of the bottom dropdown menu (javascript is in the head)-->
+        <!--Placement of the bottom dropdown menu (javascript is in the head and styling/positioning in the css)
+            onclick event handler calls out the myFunction function from above, when Menu button is clicked-->
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Menu</button>
           <div id="myDropdown" class="dropdown-content">
             <a href="indexFinalProject.html">Home</a>
             <a class="active" href="characters.html">The Characters</a>
             <a href="about.html">About This Site</a>
+            <a href="resources.html">Resources</a>
           </div>
         </div>
 

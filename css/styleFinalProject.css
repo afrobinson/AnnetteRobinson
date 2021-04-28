@@ -1,8 +1,8 @@
 ﻿ /* =================================================================
     CSS stylesheet for EME6930 Final Project *one stylesheet for all three pages
-    Responsive style for smallest screens starts on line 87
-    Responsive style for medium screens starts on line 372
-    Responsive style for larger screens starts on line 653
+    Responsive style for smallest screens starts on line 111
+    Responsive style for medium screens starts on line 407
+    Responsive style for larger screens starts on line 697
     Fonts:
         Headings are Raleway https://www.fontsquirrel.com/fonts/raleway
         Text is Merriweather https://github.com/EbenSorkin/Merriweather 
@@ -56,7 +56,6 @@
   h3 {
     font-family: "Raleway", arial, sans-serif;
     font-size: 20px;
-    text-align: left;
     color: #342309;
     text-shadow: 1px 1px #8d6141;
     font-weight: bold;
@@ -69,6 +68,16 @@
     color: #342309;
     text-shadow: 2px 2px #8d6141;
     font-size: 35px;
+    }
+
+ h5 {
+    font-family: "Raleway", arial, sans-serif;
+    font-size: 20px;
+    color: #342309;
+    text-shadow: 1px 1px #8d6141;
+    font-weight: bold;
+    padding: 3px;
+    text-align: left;
     }
 
  p {
@@ -113,7 +122,7 @@
       /*background-color: #659dbd;*/
       background-image: url("../images/forestPS50.png"); /* semitransparent image replaces background color */
       background-size: cover; /* image stretches to fill the container, relieves the 'white' space */
-      min-height: 1225px;
+      min-height: 1350px;
       width: 95%;
       border-radius: 5px;
       padding: 1%;
@@ -146,13 +155,13 @@
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
       display: none; /* display:none means this div will not be visible on the smaller screen size.
-                        Left menu is replaced with bottom menu for screens under 400px wide */
+                        Left menu is replaced with bottom menu for screens under 641px wide */
       }
 
     #mainContent {
       /* float:right; (commented out as mainContent is full width for the smaller screen size) */
       width: 100%;
-      min-height:875px;
+      min-height:1000px;
       padding:1%;
       box-sizing:border-box;
       font-family: "Raleway", arial, sans-serif;
@@ -238,7 +247,7 @@
   
     /* Styling for the text output paragraph */ 
     #outputParagraph {
-      width: 90%;
+      width: 95%;
       max-height: 100px;
       /*background-color: #659dbd;*/
       color:white;
@@ -246,8 +255,8 @@
       padding: 2px;
       margin: 0px auto 0px auto;
       text-align: center;
-      font-weight: bold;
-      /* overflow: scroll; (in case needed) */
+      /*font-weight: bold;*/
+      /*overflow: scroll; /*(in case needed)*/
       display: block;
       }
 
@@ -300,13 +309,24 @@
     /* End styling for flex box on the About page
        ------------------------------------------ */
 
+    /* Styling for the media box holding the YouTube trailer (Resources page) */
+    #media1box {
+      position: absolute;
+      top: 300px;
+      left: 30px;
+      width: 400px;
+      height: 300px;
+      line-height: 30px;
+      padding: 5px;
+      }
+
     /* ---------------------------------------
        Begin styling for the bottom dropdown menu (small size screens only) */
     
     /*  Setting position:absolute and a bottom margin sets this div at the bottom of the container */
     #bottom-menu {
       width:90%;
-      min-height: 190px;
+      min-height: 230px;
       position: absolute;
       padding: 1%;
       left: 5%; /* setting an appropriate left margin to center this div in the container */
@@ -346,7 +366,7 @@
           min-width: 200px;
           overflow: auto;
           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
+          z-index: 1; /* places the dropdown piece in front of other elements */
           }
         
         .dropdown-content a {
@@ -397,7 +417,7 @@
         /*background-color: #659dbd;*/
         background-image: url("../images/forestPS50.png"); /* semitransparent image replaces background color */
         background-size: cover; /* image stretches to fill the container, relieves the 'white' space */
-        min-height: 1100px;
+        min-height: 1120px;
         width: 95%;
         border-radius: 5px;
         padding: 1%;
@@ -485,7 +505,7 @@
       #mainContent {
         float: right; /* right hand column for medium and large screens */
         width: 75%;
-        min-height: 900px;
+        min-height: 920px;
         padding: 1%;
         font-family: "Raleway", arial, sans-serif;
         text-align: center;
@@ -632,6 +652,16 @@
     /* End styling for flex box on the About page
        ------------------------------------------ */
         
+    /* Styling for the media box holding the YouTube trailer (Resources page) */
+    #media1box {
+      position: absolute;
+      top: 300px;
+      left: 30px;
+      width: 400px;
+      height: 300px;
+      line-height: 30px;
+      padding: 5px;
+      }
               #bottom-menu {
                 width:90%;
                 min-height: 20px;
@@ -910,6 +940,17 @@
     /* End styling for flex box on the About page
        ------------------------------------------ */
       
+    /* Styling for the media box holding the YouTube trailer (Resources page) */
+    #media1box {
+      position: absolute;
+      top: 300px;
+      left: 30px;
+      width: 400px;
+      height: 300px;
+      line-height: 30px;
+      padding: 5px;
+      }
+    
             #bottom-menu {
               width:90%;
               min-height: 20px;

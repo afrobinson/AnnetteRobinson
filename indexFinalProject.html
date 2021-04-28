@@ -6,7 +6,8 @@
         Left accordion menu with javascript for medium and small screens
         Bottom dropdown menu with javascript for smallest screens
         Header with a responsive background for smallest screens
-    Home page has a form; user input feeds into conditional If/Else If/Else arguments that classify it and write the results to an output paragraph-->
+    Home page has a form; user input feeds into conditional If/Else If/Else arguments that classify it 
+        and write the results to an output paragraph-->
 
  <head>
    <meta charset="utf-8">
@@ -79,13 +80,19 @@
           }
       }
 
-      //script for the bottom dropdown menu (smallest screens), adapted from w3schools.com
-      // When the user clicks on the button, toggle between hiding and showing the dropdown content 
+      /* Script for the bottom dropdown menu (smallest screens), adapted from w3schools.com
+         The myFunction function is called out by the onlick event handler line 206 (the Menu drop button) 
+         When the user clicks on the button, toggle between hiding and showing the dropdown content in the 
+         "myDropdown" div (see html below) */
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Close the dropdown if the user clicks outside of it
+        /* Close the dropdown if the user clicks outside of it
+            - defines a window onclick function with a property called 'event'.
+            If the event target (where the mouse is clicked) does not (signified by logical operator !) match the css 'dropbtn' class,
+             then - where dropdowns is declared as accessing the dropdown-content, a for loop is executed to remove the dropdown 'show' class
+              - that is, not to show the dropdown-content */
         window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
           var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -119,6 +126,7 @@
         <h3><a class="active" href="indexFinalProject.html">Home</a></h3>
         <h3><a href="characters.html">The Characters</a></h3>
         <h3><a href="about.html">About This Site</a></h3>
+        <h3><a href="resources.html">Resources</a></h3>
         <br>
        </div>
 
@@ -128,7 +136,8 @@
         Toggle between adding and removing the "active" and "show" classes when the user clicks on the accordion menu button.
          The "active" class is used to add a background color to the current button when its belonging panel is open.
          The "show" class is used to open the specific accordion panel (in this case, only one panel)
-        For some reason (seen this before) the piece above only works when positioned ABOVE the script -->
+          - so, is the for loop needed when there are not multiple panels to loop through?
+          (and a comment re. positioning - the accordion button above only seems to work when positioned ABOVE the script) -->
         <script type = "text/javascript">
             var acc = document.getElementsByClassName("accordion");
             var i;
@@ -196,13 +205,15 @@
 
      <div id="bottom-menu">
 
-        <!--Placement of the bottom dropdown menu (javascript is in the head)-->
+        <!--Placement of the bottom dropdown menu (javascript is in the head and styling/positioning in the css)
+            onclick event handler calls out the myFunction function from above, when Menu button is clicked-->
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Menu</button>
           <div id="myDropdown" class="dropdown-content">
             <a class="active" href="indexFinalProject.html">Home</a>
             <a href="characters.html">The Characters</a>
             <a href="about.html">About This Site</a>
+            <a href="resources.html">Resources</a>
           </div>
         </div>
 
