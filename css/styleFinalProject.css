@@ -1,8 +1,8 @@
 ﻿ /* =================================================================
     CSS stylesheet for EME6930 Final Project *one stylesheet for all three pages
-    Responsive style for smallest screens starts on line 80
-    Responsive style for medium screens starts on line 364
-    Responsive style for larger screens starts on line 640
+    Responsive style for smallest screens starts on line 87
+    Responsive style for medium screens starts on line 372
+    Responsive style for larger screens starts on line 653
     Fonts:
         Headings are Raleway https://www.fontsquirrel.com/fonts/raleway
         Text is Merriweather https://github.com/EbenSorkin/Merriweather 
@@ -12,7 +12,7 @@
             Dark cream #bc986a for button hover
             Light blue #659dbd for elements of the header
             Warm brown #8d6141 for the header, buttons, and menu buttons
-        URL links: white for unclicked link, dark brown #342309 for visited link, #bc986a for link hover (with a bit of yellow for fun)
+        URL links: white for unclicked link, dark brown #342309 for active page link, #bc986a for link hover (with a bit of yellow for fun)
     ================================================================= */
 
  body {
@@ -38,15 +38,19 @@
  h1 {
 	font-family: "Raleway Bold", arial, sans-serif;
     text-shadow: 4px 4px #659dbd; /* adds a 4px colored shadow to the text */
-    font-size: 45px;
+    font-size: 50px;
     }
 
  h2 {
-	margin-top: 0px;
-	margin-bottom: 0px;	
+	margin-top: 20px;
+	margin-bottom: 20px;	
 	font-family: "Raleway", arial, sans-serif;
     font-size: 24px;
+    color: #342309;
+    text-shadow: 1px 1px #8d6141;
     text-align: center;
+    font-weight: bold;
+    /*padding: 10px;*/
     }
 
   h3 {
@@ -54,14 +58,25 @@
     font-size: 20px;
     text-align: left;
     color: #342309;
+    text-shadow: 1px 1px #8d6141;
     font-weight: bold;
     padding: 3px;
+    text-align: center;
+    }
+
+ h4 {
+    font-family: "Raleway Bold", arial, sans-serif;
+    color: #342309;
+    text-shadow: 2px 2px #8d6141;
+    font-size: 35px;
     }
 
  p {
 	font-family: "Merriweather", Helvetica, arial, sans-serif;
-	font-size: 16px;
+	font-size: 18px;
     text-align: center;
+    color: #342309;
+    text-shadow: 1px 1px #8d6141; 
     }
 
  /* Styling for the URL links */
@@ -71,15 +86,18 @@
     text-decoration: none;
     }
  a:visited {
-    color: #342309;
+    color: white;
     background-color: transparent;
     text-decoration: none;
-    }
+    } 
  a:hover {
     color: yellow; /* for contrast! */
     background-color: transparent;
     text-decoration: underline;
     }
+ a.active {
+     color: #342309;
+ }
 
  /* ================================================================= 
     This section of css is for smaller screens: Up to 640px wide (designed down to 320px smallest phone size)
@@ -305,7 +323,7 @@
           background-color: #8d6141;
           color: white;
           padding: 16px;
-          font-size: 16px;
+          font-size: 18px;
           border: none;
           cursor: pointer;
           }
@@ -313,6 +331,7 @@
         .dropbtn:hover, .dropbtn:focus {
           background-color: #fbeec1;
           color: black;
+          font-weight: bold;
           }
         
         .dropdown {
@@ -324,19 +343,24 @@
           display: none;
           position: absolute;
           background-color: #8d6141;
-          min-width: 160px;
+          min-width: 200px;
           overflow: auto;
           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
           z-index: 1;
           }
         
         .dropdown-content a {
-          color: black;
+          color: white;
+          font-weight: bold;
           padding: 12px 16px;
           text-decoration: none;
           display: block;
           }
         
+        .dropdown-content a:active {
+            color: #342309;
+            }
+
         .dropdown a:hover {background-color: #bc986a;}
         
         .show {display: block;}
@@ -359,7 +383,6 @@
       display: none; /* replacing footer with the bottom menu for the small screen size */
       }
 }
-
 
  /* =================================================================
     This section of css is for medium screens: Between 641px and 1007px
@@ -641,7 +664,6 @@
   
 }
 
-
  /* =================================================================
     This section of css is for larger screens: 1008px wide and greater.
     Menu floats left, main content floats right.
@@ -740,8 +762,9 @@
 
     #mainContent {
       float: right; /* right hand column for medium and large screens */
-      width: 75%;
+      width: 70%;
       min-height: 900px;
+      margin-right: 5%;
       padding: 1%;
       font-family: "Raleway", arial, sans-serif;
       text-align: center;
