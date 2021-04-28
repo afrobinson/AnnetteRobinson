@@ -27,7 +27,7 @@
 
             /*Function/method to define a string for the text that will be output from the parameters/properties above.
               The writeCharacter function is called out by the onclick event handlers assigned to each character 
-              in the html below (lines 139-158) */
+              in the html below (lines 143-167) */
             this.writeCharacter = function() {
                 var str = "I am " + this.name + "! My favorite food is " + this.food + ", my favorite thing to do is " + this.action
                           + ", and what I most fear is " + this.fear + ".";
@@ -55,7 +55,7 @@
         var sounds = ["audio/poohRumbly.wav", "audio/eeyore.wav", "audio/piglet1.wav", "audio/tigger.wav", "audio/poohOnRabbit.wav"];
 
         /*function to load and play sound where s is name of mp3 or wav file. This function is called out by the onclick event handlers
-          assigned to each character in the html below (lines 139-158) */
+          assigned to each character in the html below (lines 143-167) */
         function play(s) {
           player.src = s;
           player.load();
@@ -63,7 +63,7 @@
         }
 
       /* Script for the bottom dropdown menu (smallest screens), adapted from w3schools.com
-         The myFunction function is called out by the onlick event handler line 202 (the Menu drop button) 
+         The myFunction function is called out by the onlick event handler line 183 (the Menu drop button) 
          When the user clicks on the button, toggle between hiding and showing the dropdown content in the 
          "myDropdown" div (see html below) */
       function myFunction() {
