@@ -4,10 +4,10 @@
         It repurposes the educational content from Week 5
         It keeps the Week 5 functions that write information on local schools to an output paragraph below school buttons,
         but increases the number of schools from 3 to 5.
-        It adapts "Pedogogical_array_exampleB" from Week 8 (keeping or adapting most of the comments); repurposes my Week 5 form to ask how many schools the parent 
-        wants to put their child on a waiting list for; asks them to enter those school names after reviewing information on each school;
-        asks if they want to add an additional school of their choice to the list; then provides a button to output the final list of schools 
-        whose waiting list they want their child to be on-->
+        It adapts "Pedogogical_array_exampleB" from Week 8 (keeping or adapting most of the relevant comments); repurposes my Week 5 form 
+        to ask how many schools the parent wants to put their child on a waiting list for; asks them to enter those school names after 
+        reviewing information on each school; asks if they want to add an additional school of their choice to the list; then provides 
+        a button to output the final list of schools whose waiting list they want their child to be on-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,25 +70,22 @@
       var array_length, additionalSchool;
       //Get the length of the array my_array and assign it to array_length.
       array_length = my_array.length;
-      //?prompt the user to add another school name to the array? Then no need to convert it to a number?
-          //Here we're going to prompt the user to input a number to add to the array, then convert it to a number using parseInt().  
+      //Prompt the user to add another school name to the array - it remains text, so no need to use parseInt() here
       additionalSchool = prompt("Add your additional school here");
-    //This one is a little tricky.  Remember how arrays start counting at 0?  If the length of an array is 4, that means it has elements
-    //0, 1, 2, and 3.  Since we want to add another element to the array we use this line of code.  So, we make the my_array[4] element
-    //up to the user.
+      //Add another element to the array
       my_array[array_length]= additionalSchool;
-    //And here's where we let the user know what we added to the array.
+    //Alert the result of what the user added to the array
       alert("You added " + additionalSchool + " to your list.");
         
     }
 
-    //This is a simple for loop that outputs the array.
+    //A for loop to output the array - the complete list combining schools the user typed in off the list, and their additional choice
     function see_final_list()
     {
-    //I want to write all the elements of the array to a string.
+    //Write all the elements of the array to a string.
     the_string = new String();
      
-    //Here's a basic for loop.  Until I get to the end of the array (using my_array.length), I want to add the element to the string.
+    //"Here's a basic for loop.  Until I get to the end of the array (using my_array.length), I want to add the element to the string."
     for (var i=0; i<my_array.length; i++)
     {
         if (i == my_array.length-1)
@@ -104,7 +101,7 @@
         the_string += ", ";
         }
     }
-    //Then, we output the elements using an alert.
+    //Output the elements using an alert.
     alert("Here is the list of schools whose waiting list your child is now on: " + the_string);
    }
 
@@ -148,8 +145,6 @@
 
         <button class="button" onclick="create_your_list();">Type in that number of schools from the list above</button><br />
         <br />
-        <!--<button class="button" onclick="see_your_list();">See a list of your chosen schools</button><br />
-        <br />-->
         <button class="button" onclick="add_a_school();">Add one additional school, any school you like</button><br />
         <br />
         <button class="button" onclick="see_final_list();">See your final list of schools</button><br />
