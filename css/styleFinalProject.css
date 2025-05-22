@@ -277,7 +277,8 @@
        This is the flex container that holds the links to class assignments */
 
    .flex-container {
-      width: 90%;
+      width: 60%;
+    /* width: 90% (testing with 60% width to show only 3 assignments)*/
       height: 70%;
       margin-top: 20px;
       margin-right: auto;
@@ -633,6 +634,7 @@
   
         .flex-container {
           width: 80%;
+            /* width: 80%; (changed width to 50% to show just 3 assignments) */
           height: 70%;
           margin-top: 20px;
           margin-right: auto;
@@ -932,7 +934,8 @@
        This is the flex container that holds the links to class assignments */
 
     .flex-container {
-      width: 80%;
+      width: 50%;
+        /* width: 80% (changed width to 50% to show just 3 assignments) */
       height: 70%;
       margin-top: 20px;
       margin-right: auto;
